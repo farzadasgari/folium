@@ -24,3 +24,13 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #9333ea;
 }
+
+::selection {
+    background: #e9d5ff;
+    color: #334155;
+}
+
+::-moz-selection {
+    background: #e9d5ff;
+    color: #334155;
+}

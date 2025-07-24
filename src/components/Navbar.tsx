@@ -10,7 +10,8 @@ const Navbar = () => {
                 <div className="flex justify-between items-center py-4">
 
                     {/* Brand */}
-                    <div className="text-2xl font-bold text-purple-600">
+                    <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-purple-600
+                    text-transparent bg-clip-text">
                         Farzad Asgari
                     </div>
 
