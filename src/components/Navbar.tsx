@@ -1,13 +1,20 @@
-import { Menu } from 'lucide-react';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     return (
         <nav className="fixed top-0 left-0 right-0 z-40 transition-all duration-500">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center py-4">
+
+                    {/* Brand */}
                     <div className="text-2xl font-bold text-purple-600">
                         Farzad Asgari
                     </div>
+
+                    {/* Desktop Menu */}
                     <div className="hidden md:flex space-x-8">
                         {['home', 'about', 'skills', 'projects', 'contact'].map(
                             (item) => (
@@ -18,10 +25,30 @@ const Navbar = () => {
                             )
                         )}
                     </div>
-                    <button className="md:hidden p-2 rounded-lg hover:bg-black/5 transition-colors">
-                        <Menu className="w-6 h-6" />
+
+                    {/* Mobile Menu */}
+                    <button className="md:hidden p-2 rounded-lg hover:bg-black/5 transition-colors cursor-pointer"
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
+                        {isMenuOpen ? (<X className="w-6 h-6" />) : (<Menu className="w-6 h-6" />)}
                     </button>
                 </div>
+                {isMenuOpen && (
+                    <div className='md:hidden py-4 bg-black/5 rounded-lg mt-2 border border-black/10'>
+                        <div className='flex flex-col space-y-4 px-4'>
+                            {['home', 'about', 'skills', 'projects', 'contact'].map(
+                                (item) => (
+                                    <button className='capitalize text-left py-2 hover:text-purple-400
+                                    transition-colors duration-300 font-medium cursor-pointer'>
+                                        {item}
+                                    </button>
+                                )
+                            )}
+                        </div>
+                    </div>
+                )}
+
+
             </div>
         </nav>
     );
