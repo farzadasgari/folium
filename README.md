@@ -8,9 +8,9 @@
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-crimson?style=for-the-badge)](https://farzadasgari.github.io/portfolio-template)
 
-A modern, responsive portfolio template built with **React**, **TypeScript**, and **Tailwind CSS**. This template helps developers quickly create a professional portfolio to showcase projects, skills, and experience. Fully responsive and customizable, it works seamlessly across desktop, tablet, and mobile devices.
-
 </div>
+
+A modern, responsive portfolio template built with **React**, **TypeScript**, and **Tailwind CSS**. This template helps developers quickly create a professional portfolio to showcase projects, skills, and experience. Fully responsive and customizable, it works seamlessly across desktop, tablet, and mobile devices.
 
 ---
 
