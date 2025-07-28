@@ -14,7 +14,7 @@ const Hero = () => {
                     >
                         <img
                             className="w-full h-full object-cover"
-                            src="/avatar.jpg"
+                            src="/portfolio-template/avatar.jpg"
                             alt="Farzad Asgari"
                         />
                     </div>
