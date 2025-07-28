@@ -121,6 +121,8 @@ Contributions are welcome! To contribute:
    ```
 5. Open a Pull Request.
 
+See full guidline at [CONTRIBUTING](https://github.com/farzadasgari/portfolio-template/blob/main/CONTRIBUTING.md)
+
 ---
 
 ## License
