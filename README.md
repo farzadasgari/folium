@@ -163,6 +163,7 @@ If you find this template useful, please consider supporting development:
 - USDT (TRC20): `TLL9ou7PahrNob2GEppV3o4e5B9vYqgsJN`
 
 **🌐 Donate via CoinDrop**
+
 <p align="center">
   <a href="https://coindrop.to/farzadasgari" target="_blank">
     <img src="https://coindrop.to/embed-button.png" style="border-radius: 10px; height: 57px !important;width: 229px !important;" alt="Coindrop.to me">
