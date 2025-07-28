@@ -72,7 +72,7 @@ To run locally:
 
 1. **Start Development Server**  
    ```bash
-   npm start
+   npm run dev
    ```
    Visit [http://localhost:5173](http://localhost:5173) in your browser.
 
