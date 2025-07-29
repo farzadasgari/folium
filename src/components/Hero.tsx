@@ -1,12 +1,11 @@
 import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
-
     const occupation = [
-        "CEO and product architect of Tesla",
-        "Founder and CEO of xAI",
-        "Founder, CEO, and chief engineer of SpaceX",
-        "President of the Musk Foundation"
+        'CEO and product architect of Tesla',
+        'Founder and CEO of xAI',
+        'Founder, CEO, and chief engineer of SpaceX',
+        'President of the Musk Foundation',
     ];
 
     return (
@@ -32,21 +31,19 @@ const Hero = () => {
                 </div>
                 <div className="mb-8">
                     <p className="text-xl md:text-2xl text-slate-600">
-                        CEO and product architect of Tesla | Founder and CEO of xAI
+                        CEO and product architect of Tesla | Founder and CEO of
+                        xAI
                     </p>
                 </div>
                 <div className="mb-12">
                     <div className="text-lg text-slate-500 max-w-3xl leading-relaxed">
                         <ul className="space-y-2 md:columns-2 md:gap-4 ml-4">
-                            {
-                                occupation.map((item) => (
-                                    <li className="flex items-start">
-                                        <span className="mr-2">●</span>
-                                        <span>{item}</span>
-                                    </li>
-                                ))
-                            }
-
+                            {occupation.map((item) => (
+                                <li className="flex items-start">
+                                    <span className="mr-2">●</span>
+                                    <span>{item}</span>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
