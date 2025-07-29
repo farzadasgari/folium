@@ -13,7 +13,7 @@ const Navbar = () => {
                         className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-purple-600
                     text-transparent bg-clip-text"
                     >
-                        Farzad Asgari
+                        John Doe
                     </div>
 
                     {/* Desktop Menu */}
