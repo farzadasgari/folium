@@ -41,7 +41,7 @@ const Navbar = () => {
                     </button>
                 </div>
                 {isMenuOpen && (
-                    <div className="md:hidden py-4 bg-black/5 rounded-lg mt-2 border border-black/10">
+                    <div className="md:hidden py-4 bg-white/90 rounded-lg mt-2 border border-purple-400/20 backdrop-blur-md">
                         <div className="flex flex-col space-y-4 px-4">
                             {[
                                 'home',
