@@ -52,10 +52,11 @@ const About = () => {
                                 </div>
                             ))}
                         </div>
-                        <div className='mt-4'>
+                        <div className="mt-4">
                             <a href="/portfolio-template/resume.pdf" download>
                                 <div className="inline-flex items-center text-purple-600 hover:text-purple-400 transition-colors duration-300">
-                                    <Download className='h-4 w-4 mr-3'/> Download Resume
+                                    <Download className="h-4 w-4 mr-3" />{' '}
+                                    Download Resume
                                 </div>
                             </a>
                         </div>
