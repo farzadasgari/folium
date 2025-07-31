@@ -1,4 +1,4 @@
-import { User, Code } from 'lucide-react';
+import { User, Code, Download } from 'lucide-react';
 
 const About = () => {
     const iDo = [
@@ -6,7 +6,6 @@ const About = () => {
         'Responsive UI/UX Design',
         'Modern JavaScript FrameWorks',
         'API Development & Integration',
-        'Performance Optimization',
     ];
 
     return (
@@ -52,6 +51,13 @@ const About = () => {
                                     </span>
                                 </div>
                             ))}
+                        </div>
+                        <div className='mt-4'>
+                            <a href="#">
+                                <div className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300">
+                                    <Download className='h-4 w-4 mr-3'/> Download Resume
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
