@@ -1,24 +1,29 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     const socialLinks = [
         {
-            name: "Email",
-            href: "mailto:khufarzadasgari@gmail.com",
+            name: 'Email',
+            href: 'mailto:khufarzadasgari@gmail.com',
             icon: Mail,
         },
         {
-            name: "GitHub",
-            href: "https://github.com/farzadasgari/",
+            name: 'GitHub',
+            href: 'https://github.com/farzadasgari/',
             icon: Github,
         },
         {
-            name: "LinkedIn",
-            href: "https://www.linkedin.com/in/farzad-asgari/",
+            name: 'LinkedIn',
+            href: 'https://www.linkedin.com/in/farzad-asgari/',
             icon: Linkedin,
-        }
+        },
+        {
+            name: 'Twitter',
+            href: 'https://x.com/farzad_asg/',
+            icon: Twitter,
+        },
     ];
 
     return (
@@ -34,23 +39,40 @@ const Footer = () => {
                         </p>
                     </div>
                     <div className="flex flex-wrap justify-center gap-4">
-                        <Github />
+                        {socialLinks.map((social) => {
+                            const IconComponent = social.icon;
+                            return (
+                                <a
+                                    key={social.name}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-slate-500 hover:text-purple-400 transition-all duration-300 transform transform-gpu hover:scale-[1.1] p-2 rounded-lg hover:bg-black/5"
+                                    aria-label={social.name}
+                                    title={social.name}
+                                >
+                                    <IconComponent />
+                                </a>
+                            );
+                        })}
                     </div>
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-black/10 text-center">
                     <p className="text-slate-600 text-sm">
-                        John Doe © {currentYear} All rights reserved. Made with ❤️ by
+                        John Doe © {currentYear} All rights reserved. Made with
+                        ❤️ by
                         <a
-                        className="ml-2 text-purple-400 hover:text-purple-600 hover:underline transition-all duration-300"
-                        href="https://github.com/farzadasgari">
-                        FarZad
+                            className="ml-2 text-purple-400 hover:text-purple-600 hover:underline transition-all duration-300"
+                            href="https://github.com/farzadasgari"
+                        >
+                            FarZad
                         </a>
                     </p>
                 </div>
             </div>
         </footer>
-    )
-}
+    );
+};
 
 export default Footer;
