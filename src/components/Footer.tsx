@@ -1,6 +1,8 @@
 import { Github } from "lucide-react";
 
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
+
     return (
         <footer className="py-12 px-4 border-t border-purple-400/20 hover:border-purple-400/80 bg-white/50 backdrop-blur-sm transition-all duration-300">
             <div className="max-w-6xl mx-auto">
@@ -16,6 +18,17 @@ const Footer = () => {
                     <div className="flex flex-wrap justify-center gap-4">
                         <Github />
                     </div>
+                </div>
+
+                <div className="mt-8 pt-8 border-t border-black/10 text-center">
+                    <p className="text-slate-600 text-sm">
+                        John Doe © {currentYear} All rights reserved. Made with ❤️ by
+                        <a
+                        className="ml-2 text-purple-400 hover:text-purple-600 hover:underline transition-all duration-300"
+                        href="https://github.com/farzadasgari">
+                        FarZad
+                        </a>
+                    </p>
                 </div>
             </div>
         </footer>
