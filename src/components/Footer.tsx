@@ -1,7 +1,25 @@
-import { Github } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+
+    const socialLinks = [
+        {
+            name: "Email",
+            href: "mailto:khufarzadasgari@gmail.com",
+            icon: Mail,
+        },
+        {
+            name: "GitHub",
+            href: "https://github.com/farzadasgari/",
+            icon: Github,
+        },
+        {
+            name: "LinkedIn",
+            href: "https://www.linkedin.com/in/farzad-asgari/",
+            icon: Linkedin,
+        }
+    ];
 
     return (
         <footer className="py-12 px-4 border-t border-purple-400/20 hover:border-purple-400/80 bg-white/50 backdrop-blur-sm transition-all duration-300">
