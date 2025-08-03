@@ -63,7 +63,7 @@ const Footer = () => {
                         John Doe © {currentYear} All rights reserved. Made with
                         ❤️ by
                         <a
-                            className="ml-2 text-purple-400 hover:text-purple-600 hover:underline transition-all duration-300"
+                            className="ml-1 text-purple-400 hover:text-purple-600 hover:underline transition-all duration-300"
                             href="https://github.com/farzadasgari"
                         >
                             FarZad
