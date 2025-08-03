@@ -1,4 +1,37 @@
 const Skills = () => {
+    const SkillCategory = [
+        {
+            title: "Front-End",
+            skills: [
+                {name: "React", level: 90},
+                {name: "TypeScript", level: 95},
+                {name: "Next.js", level: 80},
+                {name: "Sass/SCSS", level: 70},
+                {name: "Tailwind", level: 85},
+            ],
+        },
+        {
+            title: "Back-End",
+            skills: [
+                {name: "Node.js", level: 70},
+                {name: "PostgreSQL", level: 95},
+                {name: "MongoDB", level: 90},
+                {name: "Django", level: 80},
+                {name: "GraphQL", level: 85},
+            ],
+        },
+        {
+            title: "Tools",
+            skills: [
+                {name: "Git", level: 80},
+                {name: "Docker", level: 90},
+                {name: "AWS", level: 70},
+                {name: "Figma", level: 95},
+                {name: "Jest", level: 85},
+            ],
+        }
+    ];
+
     return (
         <section id="skills" className="py-20 px-4">
             <div className="max-w-6xl mx-auto">
@@ -11,6 +44,6 @@ const Skills = () => {
             </div>
         </section>
     )
-} 
+}
 
 export default Skills;
