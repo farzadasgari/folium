@@ -5,6 +5,14 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
+    const scrollToSection = (sectionID: string) => {
+        const element = document.getElementById(sectionID);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+        setIsMenuOpen(false);
+    };
+
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
@@ -33,7 +41,10 @@ const Navbar = () => {
                     <div className="hidden md:flex space-x-8">
                         {['home', 'about', 'skills', 'projects', 'contact'].map(
                             (item) => (
-                                <button className="capitalize hover:text-purple-400 transition-all duration-300 cursor-pointer font-medium relative group">
+                                <button
+                                key={item}
+                                onClick={() => scrollToSection(item)}
+                                className="capitalize hover:text-purple-400 transition-all duration-300 cursor-pointer font-medium relative group">
                                     {item}
                                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:bg-purple-400 group-hover:w-full transition-all duration-300"></span>
                                 </button>
