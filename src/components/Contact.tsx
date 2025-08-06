@@ -97,6 +97,9 @@ const Contact = () => {
                                 </button>
                             </div>
                         </form>
+                        <div className="mt-4 p-4 bg-green-400/30 border border-green-400 rounded-lg text-slate-800 text-center">
+                            Thank You! Your message has been sent successfully!
+                        </div>
                     </div>
                 </div>
             </div>
