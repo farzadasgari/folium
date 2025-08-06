@@ -1,6 +1,36 @@
-import { Mail, Linkedin, Github } from "lucide-react";
+import React, { useState } from 'react';
+import { Mail, Linkedin, Github } from 'lucide-react';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const handleInputChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitted(true);
+        setTimeout(() => setIsSubmitted(false), 3000);
+        setFormData({
+            name: '',
+            email: '',
+            message: '',
+        });
+    };
+
     return (
         <section id="contact" className="py-20 px-4">
             <div className="max-w-6xl mx-auto">
@@ -24,7 +54,9 @@ const Contact = () => {
                                 <Mail className="w-6 h-6 text-purple-400 mr-4 transition-all duration-300 transform transform-gpu group-hover:scale-[1.1]" />
                                 <div>
                                     <div className="font-medium">Email</div>
-                                    <div className="text-slate-500 text-sm">khufarzadasgari@gmail.com</div>
+                                    <div className="text-slate-500 text-sm">
+                                        khufarzadasgari@gmail.com
+                                    </div>
                                 </div>
                             </a>
                             <a
@@ -34,7 +66,9 @@ const Contact = () => {
                                 <Github className="w-6 h-6 text-purple-400 mr-4 transition-all duration-300 transform transform-gpu group-hover:scale-[1.1]" />
                                 <div>
                                     <div className="font-medium">Github</div>
-                                    <div className="text-slate-500 text-sm">https://github.com/farzadasgari</div>
+                                    <div className="text-slate-500 text-sm">
+                                        https://github.com/farzadasgari
+                                    </div>
                                 </div>
                             </a>
                             <a
@@ -44,47 +78,70 @@ const Contact = () => {
                                 <Linkedin className="w-6 h-6 text-purple-400 mr-4 transition-all duration-300 transform transform-gpu group-hover:scale-[1.1]" />
                                 <div>
                                     <div className="font-medium">Linkedin</div>
-                                    <div className="text-slate-500 text-sm">https://www.linkedin.com/in/farzad-asgari/</div>
+                                    <div className="text-slate-500 text-sm">
+                                        https://www.linkedin.com/in/farzad-asgari/
+                                    </div>
                                 </div>
                             </a>
                         </div>
                     </div>
 
                     <div>
-                        <form action="javascript:void(0)">
+                        <form onSubmit={handleSubmit}>
                             <div className="mt-3">
-                                <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+                                <label
+                                    htmlFor="name"
+                                    className="block text-sm font-medium mb-2"
+                                >
+                                    Name
+                                </label>
                                 <input
                                     type="text"
                                     id="name"
                                     name="name"
+                                    value={formData.name}
+                                    onChange={handleInputChange}
                                     required
                                     placeholder="Your Name"
                                     className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90"
                                 />
                             </div>
                             <div className="mt-3">
-                                <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                                <label
+                                    htmlFor="email"
+                                    className="block text-sm font-medium mb-2"
+                                >
+                                    Email
+                                </label>
                                 <input
                                     type="email"
                                     id="email"
                                     name="email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
                                     required
                                     placeholder="your_email@example.com"
                                     className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90"
                                 />
                             </div>
                             <div className="mt-3">
-                                <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+                                <label
+                                    htmlFor="message"
+                                    className="block text-sm font-medium mb-2"
+                                >
+                                    Message
+                                </label>
                                 <textarea
                                     id="message"
                                     name="message"
+                                    value={formData.message}
+                                    onChange={handleInputChange}
                                     required
                                     rows={5}
                                     placeholder="Tell Me About Your Project..."
                                     className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90"
                                     style={{
-                                        resize: "none",
+                                        resize: 'none',
                                     }}
                                 />
                             </div>
@@ -97,14 +154,18 @@ const Contact = () => {
                                 </button>
                             </div>
                         </form>
-                        <div className="mt-4 p-4 bg-green-400/30 border border-green-400 rounded-lg text-slate-800 text-center">
-                            Thank You! Your message has been sent successfully!
-                        </div>
+
+                        {isSubmitted && (
+                            <div className="mt-4 p-4 bg-green-400/30 border border-green-400 rounded-lg text-slate-800 text-center">
+                                Thank You! Your message has been sent
+                                successfully!
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default Contact;

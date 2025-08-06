@@ -8,7 +8,7 @@ const Navbar = () => {
     const scrollToSection = (sectionID: string) => {
         const element = document.getElementById(sectionID);
         if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+            element.scrollIntoView({ behavior: 'smooth' });
         }
         setIsMenuOpen(false);
     };
@@ -44,7 +44,8 @@ const Navbar = () => {
                                 <button
                                     key={item}
                                     onClick={() => scrollToSection(item)}
-                                    className="capitalize hover:text-purple-400 transition-all duration-300 cursor-pointer font-medium relative group">
+                                    className="capitalize hover:text-purple-400 transition-all duration-300 cursor-pointer font-medium relative group"
+                                >
                                     {item}
                                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:bg-purple-400 group-hover:w-full transition-all duration-300"></span>
                                 </button>
