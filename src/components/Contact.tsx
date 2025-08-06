@@ -50,6 +50,46 @@ const Contact = () => {
                         </div>
                     </div>
 
+                    <div>
+                        <form action="javascript:void(0)">
+                            <div>
+                                <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                    placeholder="Your Name"
+                                    className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90"
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    placeholder="your_email@example.com"
+                                    className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90"
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    required
+                                    rows={5}
+                                    placeholder="Tell Me About Your Project..."
+                                    className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90"
+                                    style={{
+                                        resize: "none",
+                                    }}
+                                />
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
