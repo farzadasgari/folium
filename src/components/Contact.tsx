@@ -52,7 +52,7 @@ const Contact = () => {
 
                     <div>
                         <form action="javascript:void(0)">
-                            <div>
+                            <div className="mt-3">
                                 <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
                                 <input
                                     type="text"
@@ -63,7 +63,7 @@ const Contact = () => {
                                     className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90"
                                 />
                             </div>
-                            <div>
+                            <div className="mt-3">
                                 <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
                                 <input
                                     type="email"
@@ -74,7 +74,7 @@ const Contact = () => {
                                     className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90"
                                 />
                             </div>
-                            <div>
+                            <div className="mt-3">
                                 <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
                                 <textarea
                                     id="message"
@@ -87,6 +87,14 @@ const Contact = () => {
                                         resize: "none",
                                     }}
                                 />
+                            </div>
+                            <div className="mt-3">
+                                <button
+                                    type="submit"
+                                    className="w-full cursor-pointer bg-gradient-to-r from-purple-400 to-purple-600 hover:from-purple-500 hover:to-purple-800 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform-gpu hover:scale-[1.01] shadow-md"
+                                >
+                                    Send Message
+                                </button>
                             </div>
                         </form>
                     </div>

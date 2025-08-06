@@ -51,7 +51,7 @@ const Hero = () => {
                     <button
                         className="cursor-pointer bg-gradient-to-r from-purple-500 to-purple-700
                     hover:shadow-lg text-white px-8 py-4 rounded-full font-semibold transition-all
-                    duration-200 transform-gpu hover:scale-[1.1] shadow-md"
+                    duration-300 transform-gpu hover:scale-[1.05] shadow-md"
                     >
                         View My Work
                     </button>
@@ -59,7 +59,7 @@ const Hero = () => {
                     <button
                         className="cursor-pointer border-2 border-purple-400 text-purple-400
                     hover:bg-purple-400 hover:text-white px-8 py-4 rounded-full font-semibold transition-all
-                    duration-300 transform-gpu hover:scale-[1.1]"
+                    duration-300 transform-gpu hover:scale-[1.05]"
                     >
                         Get In Touch
                     </button>
