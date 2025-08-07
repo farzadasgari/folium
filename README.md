@@ -2,11 +2,11 @@
 
 <div align="center">
   
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://github.com/farzadasgari/portfolio-template/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://github.com/farzadasgari/folium/blob/main/LICENSE)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-crimson?style=for-the-badge)](https://farzadasgari.github.io/portfolio-template)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-crimson?style=for-the-badge)](https://farzadasgari.github.io/folium)
 
 </div>
 
@@ -44,7 +44,7 @@ A modern, responsive portfolio template built with **React**, **TypeScript**, an
 ## Live Demo
 
 See the template in action:  
-🚀 **[View Live Demo](https://farzadasgari.github.io/portfolio-template)**
+🚀 **[View Live Demo](https://farzadasgari.github.io/folium)**
 
 ---
 
@@ -54,8 +54,8 @@ To get started:
 
 1. **Clone the Repository**  
    ```bash
-   git clone https://github.com/farzadasgari/portfolio-template.git
-   cd portfolio-template
+   git clone https://github.com/farzadasgari/folium.git
+   cd folium
    ```
 
 2. **Install Dependencies**  
@@ -121,13 +121,13 @@ Contributions are welcome! To contribute:
    ```
 5. Open a Pull Request.
 
-See full guidline at [CONTRIBUTING](https://github.com/farzadasgari/portfolio-template/blob/main/CONTRIBUTING.md)
+See full guidline at [CONTRIBUTING](https://github.com/farzadasgari/folium/blob/main/CONTRIBUTING.md)
 
 ---
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/farzadasgari/portfolio-template/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/farzadasgari/folium/blob/main/LICENSE) file for details.
 
 ---
 

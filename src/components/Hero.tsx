@@ -22,7 +22,7 @@ const Hero = () => {
                     >
                         <img
                             className="w-full h-full object-cover"
-                            src="/portfolio-template/avatar.webp"
+                            src="/folium/avatar.webp"
                             alt="John Doe"
                         />
                     </div>

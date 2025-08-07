@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-template",
+  "name": "folium",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -22,10 +22,10 @@
   "homepage": "https://github.com/farzadasgari/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/farzadasgari/portfolio-template.git"
+    "url": "git+https://github.com/farzadasgari/folium.git"
   },
   "bugs": {
-    "url": "https://github.com/farzadasgari/portfolio-template/issues"
+    "url": "https://github.com/farzadasgari/folium/issues"
   },
   "profiles": {
     "googleScholar": "https://scholar.google.com/citations?user=Rhue_kkAAAAJ&hl=en",

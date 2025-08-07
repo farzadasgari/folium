@@ -3,7 +3,7 @@ import Index from './pages/Index';
 
 function App() {
     return (
-        <BrowserRouter basename="/portfolio-template">
+        <BrowserRouter basename="/folium">
             <Routes>
                 <Route path="*" element={<Index />} />
             </Routes>
