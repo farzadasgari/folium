@@ -1,5 +1,5 @@
-import { Github } from "lucide-react";
-import React from "react";
+import { Github } from 'lucide-react';
+import React from 'react';
 
 interface Project {
     imageURL: string;
@@ -25,8 +25,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                         alt={project.title}
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-purple-600/20
-                        opacity-60 group-hover:opacity-20 transition-opacity duration-300"></div>
+                    <div
+                        className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-purple-600/20
+                        opacity-60 group-hover:opacity-20 transition-opacity duration-300"
+                    ></div>
                 </div>
             </div>
             <div className="p-6 flex flex-col flex-grow">
@@ -37,15 +39,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                     {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
-                    {
-                        project.topics.map((topic) => (
-                            <span
+                    {project.topics.map((topic) => (
+                        <span
                             key={topic}
-                            className="px-3 py-1 bg-purple-200 hover:bg-purple-300 text-purple-900 border border-purple-200 text-xs rounded-full font-medium">
-                                {topic}
-                            </span>
-                        ))
-                    }
+                            className="px-3 py-1 bg-purple-200 hover:bg-purple-300 text-purple-900 border border-purple-200 text-xs rounded-full font-medium"
+                        >
+                            {topic}
+                        </span>
+                    ))}
                 </div>
 
                 <div className="flex gap-3 mt-auto">
@@ -65,6 +66,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 export default ProjectCard;
