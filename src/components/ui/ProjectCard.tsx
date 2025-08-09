@@ -59,6 +59,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                     </a>
                     <a
                         href={project.githubURL}
+                        target="_blank"
                         className="text-slate-500 hover:text-purple-400 transition-all duration-300 transform transform-gpu hover:scale-[1.1] p-2 rounded-lg hover:bg-gray-500/5"
                     >
                         <Github className="w-5 h-5" />
