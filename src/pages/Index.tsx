@@ -5,6 +5,7 @@ import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import ThemeSidebar from '../components/ui/ThemeSidebar';
 
 const Index = () => {
     return (
@@ -13,6 +14,7 @@ const Index = () => {
         from-slate-50 to-slate-200 text-slate-900"
         >
             <Navbar />
+            <ThemeSidebar />
             <Hero />
             <About />
             <Skills />
