@@ -1,6 +1,16 @@
 import { SunMoon, Moon, Palette } from 'lucide-react';
 
 const ThemeSidebar = () => {
+    const themes = [
+        {id: "purple", name: "Purple", color: "bg-purple-500"},
+        {id: "blue", name: "Blue", color: "bg-blue-500"},
+        {id: "green", name: "Green", color: "bg-emerald-500"},
+        {id: "orange", name: "Orange", color: "bg-orange-500"},
+        {id: "red", name: "Red", color: "bg-red-500"},
+        {id: "pink", name: "Pink", color: "bg-pink-500"},
+        {id: "rose", name: "Rose", color: "bg-rose-500"},
+        {id: "cyan", name: "Cyan", color: "bg-purple-500"},
+    ]
     return (
         <div
             className="fixed top-1/2 -translate-y-1/2 z-40 transition-all duration-300 right-0"
@@ -23,6 +33,9 @@ const ThemeSidebar = () => {
                         <Palette className="w-4 h-4 mr-2" />
                         Color Themes
                     </h3>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+
+                    </div>
                 </div>
             </div>
         </div>
