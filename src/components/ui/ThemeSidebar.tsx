@@ -11,6 +11,15 @@ const ThemeSidebar = () => {
         { id: "yellow", name: "Yellow", color: "bg-yellow-500" },
         { id: "rose", name: "Rose", color: "bg-rose-500" },
     ]
+
+    const languages = [
+        {id: "en", name:"English", flag: "🇺🇸"},
+        {id: "ja", name:"日本語", flag: "🇯🇵"},
+        {id: "fr", name:"Français", flag: "🇫🇷"},
+        {id: "de", name:"Deutsch", flag: "🇩🇪"},
+        {id: "zh", name:"中文", flag: "🇨🇳"},
+        {id: "es", name:"Español", flag: "🇪🇸"},
+    ]
     return (
         <div
             className="fixed top-1/2 -translate-y-1/2 z-40 transition-all duration-300 right-0"
@@ -53,6 +62,8 @@ const ThemeSidebar = () => {
                         <Languages className="w-4 h-4 mr-2" />
                         Languages
                     </h3>
+                    <div className='space-y-2'>
+                    </div>
                 </div>
             </div>
         </div>
