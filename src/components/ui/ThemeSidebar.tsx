@@ -2,14 +2,14 @@ import { SunMoon, Moon, Palette } from 'lucide-react';
 
 const ThemeSidebar = () => {
     const themes = [
-        {id: "purple", name: "Purple", color: "bg-purple-500"},
-        {id: "blue", name: "Blue", color: "bg-blue-500"},
-        {id: "green", name: "Green", color: "bg-emerald-500"},
-        {id: "orange", name: "Orange", color: "bg-orange-500"},
-        {id: "red", name: "Red", color: "bg-red-500"},
-        {id: "pink", name: "Pink", color: "bg-pink-500"},
-        {id: "rose", name: "Rose", color: "bg-rose-500"},
-        {id: "cyan", name: "Cyan", color: "bg-purple-500"},
+        { id: "purple", name: "Purple", color: "bg-purple-500" },
+        { id: "red", name: "Red", color: "bg-red-500" },
+        { id: "green", name: "Green", color: "bg-emerald-500" },
+        { id: "blue", name: "Blue", color: "bg-blue-500" },
+        { id: "pink", name: "Pink", color: "bg-pink-500" },
+        { id: "cyan", name: "Cyan", color: "bg-cyan-500" },
+        { id: "yellow", name: "Yellow", color: "bg-yellow-500" },
+        { id: "rose", name: "Rose", color: "bg-rose-500" },
     ]
     return (
         <div
@@ -34,7 +34,17 @@ const ThemeSidebar = () => {
                         Color Themes
                     </h3>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-
+                        {
+                            themes.map((theme, index) => (
+                                <button
+                                    key={index}
+                                    className="p-2 md:p-3 rounded-lg border-2 transition-all duration-300 transform transform-gpu hover:scale-[1.1] text-slate-700 border-transparent hover:border-slate-300"
+                                >
+                                    <div className={`w-5 h-5 rounded-full md:w-6 md:h-6 ${theme.color} mx-auto mb-1`}></div>
+                                    <div className='text-xs'>{theme.name}</div>
+                                </button>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
