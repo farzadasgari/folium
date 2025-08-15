@@ -1,6 +1,27 @@
-import { SunMoon, Moon, Palette, Languages, ChevronLeft } from 'lucide-react';
+import { SunMoon, Moon, Palette, Languages, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const ThemeSidebar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            const target = event.target as Element;
+            const sidebar = document.querySelector('[data-sidebar]');
+            const toggle = document.querySelector('[data-sidebar-toggle]');
+
+            if (isOpen && sidebar && !sidebar.contains(target) && toggle && !toggle.contains(target)) {
+                setIsOpen(false);
+            }
+        };
+
+        if (isOpen) {
+            document.addEventListener('click', handleClickOutside);
+            return () => document.removeEventListener('click', handleClickOutside);
+        }
+    }, [isOpen]);
+
+
     const themes = [
         { id: 'purple', name: 'Purple', color: 'bg-purple-500' },
         { id: 'red', name: 'Red', color: 'bg-red-500' },
@@ -25,7 +46,7 @@ const ThemeSidebar = () => {
     return (
         <>
             <div className="fixed top-1/2 -translate-y-1/2 z-40 transition-all duration-300 right-0">
-                <div className="bg-white/95 backdrop-blur-md rounded-l-2xl shadow-2xl transition-all duration-300 border border-purple-400/30 hover:border-purple-400/70 p-4 md:p-6 w-80 max-h-[90vh] overflow-y-auto">
+                <div className="bg-white/95 backdrop-blur-md rounded-l-2xl shadow-2xl transition-all duration-300 border border-purple-400/30 hover:border-purple-400/70 p-4 md:p-6 w-80 max-h-[90vh] overflow-y-auto" data-sidebar>
                     {/* Theme Mode Toggle */}
                     <div className="flex items-center justify-between mb-3">
                         <span className="text-sm font-medium flex items-center text-slate-700">
@@ -81,7 +102,7 @@ const ThemeSidebar = () => {
                 data-sidebar-toggle
                 className="fixed top-1/2 -translate-y-1/2 z-40 p-2 md:pd-3 transition-all duration-300 shadow-lg hover:shadow-xl bg-purple-400 hover:bg-purple-600 text-white rounded-l-xl border-0 outline-none right-80 cursor-pointer"
             >
-                <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
+                <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
             </button>
         </>
     );
