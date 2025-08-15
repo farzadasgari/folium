@@ -1,8 +1,21 @@
-import { SunMoon, Moon, Palette, Languages, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
+import { SunMoon, Moon, Palette, Languages, ChevronLeft, ChevronRight, Sun } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const ThemeSidebar = () => {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
+
+    const [mode, setMode] = useState<'light' | 'dark'>(
+        () => (localStorage.getItem("theme") as "light" | "dark") || "light"
+    );
+
+    useEffect(() => {
+        if (mode === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+        localStorage.setItem("theme", mode);
+    }, [mode])
 
     const themes = [
         { id: 'purple', name: 'Purple', color: 'bg-purple-500' },
@@ -35,20 +48,24 @@ const ThemeSidebar = () => {
             }
             <div className={`fixed top-1/2 -translate-y-1/2 z-40 transition-all duration-300
                 ${isOpen ? 'right-0' : '-right-80'}`}>
-                <div className="bg-white/95 backdrop-blur-md rounded-l-2xl shadow-2xl transition-all duration-300 border border-purple-400/30 hover:border-purple-400/70 p-4 md:p-6 w-80 max-h-[90vh] overflow-y-auto" data-sidebar>
+                <div className="bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-l-2xl shadow-2xl transition-all duration-300 border border-purple-400/30 dark:border-purple-200/50 hover:border-purple-400/70 dark:hover:border-purple-200/90 p-4 md:p-6 w-80 max-h-[90vh] overflow-y-auto" data-sidebar>
                     {/* Theme Mode Toggle */}
                     <div className="flex items-center justify-between mb-3">
-                        <span className="text-sm font-medium flex items-center text-slate-700">
+                        <span className="text-sm font-medium flex items-center text-slate-700 dark:text-slate-200">
                             <SunMoon className="w-4 h-4 mr-2" />
                             Theme Mode
                         </span>
-                        <button className="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors duration-300 transform transform-gpu hover:scale-[1.1] cursor-pointer">
-                            <Moon className="w-4 h-4 text-slate-600" />
+                        <button className="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 transition-colors duration-300 transform transform-gpu hover:scale-[1.1] cursor-pointer"
+                        onClick={() => setMode(mode === "light" ? "dark" : "light")}>
+                            {
+                                mode === "light" ? (<Moon className="w-4 h-4 text-slate-600" />) : (<Sun className="w-4 h-4 text-slate-300" />)
+                            }
+                            
                         </button>
                     </div>
                     {/* Color Themes */}
                     <div>
-                        <h3 className="text-sm font-medium mb-3 flex items-center text-slate-700">
+                        <h3 className="text-sm font-medium mb-3 flex items-center text-slate-700 dark:text-slate-200">
                             <Palette className="w-4 h-4 mr-2" />
                             Color Themes
                         </h3>
@@ -56,7 +73,7 @@ const ThemeSidebar = () => {
                             {themes.map((theme, index) => (
                                 <button
                                     key={index}
-                                    className="p-2 md:p-3 rounded-lg border-2 transition-all duration-300 transform transform-gpu hover:scale-[1.1] text-slate-700 border-transparent hover:border-slate-300 cursor-pointer"
+                                    className="p-2 md:p-3 rounded-lg border-2 transition-all duration-300 transform transform-gpu hover:scale-[1.1] text-slate-700 dark:text-slate-200 border-transparent hover:border-slate-300 cursor-pointer"
                                 >
                                     <div
                                         className={`w-5 h-5 rounded-full md:w-6 md:h-6 ${theme.color} mx-auto mb-1`}
@@ -68,7 +85,7 @@ const ThemeSidebar = () => {
                     </div>
                     {/* Languages */}
                     <div>
-                        <h3 className="text-sm font-medium mb-3 flex items-center text-slate-700 mt-3">
+                        <h3 className="text-sm font-medium mb-3 flex items-center text-slate-700 dark:text-slate-200 mt-3">
                             <Languages className="w-4 h-4 mr-2" />
                             Languages
                         </h3>
@@ -76,7 +93,7 @@ const ThemeSidebar = () => {
                             {languages.map((lang, index) => (
                                 <button
                                     key={index}
-                                    className="w-full p-2 rounded-lg text-left transition-all duration-300 transform transform-gpu hover:scale-[1.1] text-slate-700 hover:bg-slate-100 cursor-pointer"
+                                    className="w-full p-2 rounded-lg text-left transition-all duration-300 transform transform-gpu hover:scale-[1.1] text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800 cursor-pointer"
                                 >
                                     <span className="text-sm">{lang.name}</span>
                                 </button>
@@ -91,7 +108,7 @@ const ThemeSidebar = () => {
                 data-sidebar-toggle
                 onClick={() => setIsOpen(!isOpen)}
                 className={`fixed top-1/2 -translate-y-1/2 z-40 p-2 md:pd-3 transition-all duration-300 shadow-lg hover:shadow-xl
-                    bg-purple-400 hover:bg-purple-600 text-white rounded-l-xl border-0 outline-none  cursor-pointer
+                    bg-purple-400 hover:bg-purple-600 dark:bg-purple-900 dark:hover:bg-purple-700 text-white rounded-l-xl border-0 outline-none cursor-pointer
                     ${isOpen ? 'right-80' : 'right-0'}`}
             >
                 {isOpen ? <ChevronRight className="w-4 h-4 md:w-5 md:h-5" /> : <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />}
