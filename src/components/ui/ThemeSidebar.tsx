@@ -1,26 +1,8 @@
 import { SunMoon, Moon, Palette, Languages, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const ThemeSidebar = () => {
     const [isOpen, setIsOpen] = useState(true);
-
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            const target = event.target as Element;
-            const sidebar = document.querySelector('[data-sidebar]');
-            const toggle = document.querySelector('[data-sidebar-toggle]');
-
-            if (isOpen && sidebar && !sidebar.contains(target) && toggle && !toggle.contains(target)) {
-                setIsOpen(false);
-            }
-        };
-
-        if (isOpen) {
-            document.addEventListener('click', handleClickOutside);
-            return () => document.removeEventListener('click', handleClickOutside);
-        }
-    }, [isOpen]);
-
 
     const themes = [
         { id: 'purple', name: 'Purple', color: 'bg-purple-500' },
@@ -48,7 +30,7 @@ const ThemeSidebar = () => {
             {
                 isOpen && (
                     <div className='fixed inset-0 bg-black/20 backdrop-blur-sm z-30'
-                    onClick={() => setIsOpen(false)} />
+                        onClick={() => setIsOpen(false)} />
                 )
             }
             <div className={`fixed top-1/2 -translate-y-1/2 z-40 transition-all duration-300
