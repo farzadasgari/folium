@@ -69,7 +69,7 @@ const ThemeSidebar = () => {
                             Theme Mode
                         </span>
                         <button
-                            className="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 transition-colors duration-300 transform transform-gpu hover:scale-[1.1] cursor-pointer"
+                            className="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-900/80 dark:hover:bg-slate-900 transition-colors duration-300 transform transform-gpu hover:scale-[1.1] cursor-pointer"
                             onClick={() =>
                                 setMode(mode === 'light' ? 'dark' : 'light')
                             }
