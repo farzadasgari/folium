@@ -24,14 +24,14 @@ const Navbar = () => {
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500
-        ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-lg' : 'bg-transparent'}
+        ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-lg dark:bg-slate-900/80' : 'bg-transparent'}
         `}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center py-4">
                     {/* Brand */}
                     <div
-                        className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-purple-600
+                        className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 dark:from-purple-200 dark:to-purple-300
                     text-transparent bg-clip-text"
                     >
                         John Doe
@@ -44,10 +44,10 @@ const Navbar = () => {
                                 <button
                                     key={item}
                                     onClick={() => scrollToSection(item)}
-                                    className="capitalize hover:text-purple-400 transition-all duration-300 cursor-pointer font-medium relative group"
+                                    className="capitalize text-slate-800 hover:text-purple-400 dark:text-slate-200 dark:hover:text-purple-300 transition-all duration-300 cursor-pointer font-medium relative group"
                                 >
                                     {item}
-                                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:bg-purple-400 group-hover:w-full transition-all duration-300"></span>
+                                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:bg-purple-400 dark:group-hover:bg-purple-300 group-hover:w-full transition-all duration-300"></span>
                                 </button>
                             )
                         )}
@@ -55,7 +55,7 @@ const Navbar = () => {
 
                     {/* Mobile Menu */}
                     <button
-                        className="md:hidden p-2 rounded-lg hover:bg-black/5 transition-colors cursor-pointer"
+                        className="md:hidden p-2 rounded-lg text-slate-800 hover:bg-slate-800/20 dark:text-slate-200 dark:hover:bg-slate-800/70 transition-colors cursor-pointer"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                         {isMenuOpen ? (
@@ -66,7 +66,7 @@ const Navbar = () => {
                     </button>
                 </div>
                 {isMenuOpen && (
-                    <div className="md:hidden py-4 bg-white/90 rounded-lg mt-2 border border-purple-400/20 backdrop-blur-md">
+                    <div className="md:hidden py-4 bg-white/90 dark:bg-slate-800/80 rounded-lg mt-2 border border-purple-400/20 backdrop-blur-md">
                         <div className="flex flex-col space-y-4 px-4">
                             {[
                                 'home',
@@ -78,7 +78,7 @@ const Navbar = () => {
                                 <button
                                     key={item}
                                     onClick={() => scrollToSection(item)}
-                                    className="capitalize text-left py-2 hover:text-purple-400
+                                    className="capitalize text-left py-2 text-slate-800 hover:text-purple-400 dark:text-slate-200 dark:hover:text-purple-300
                                     transition-colors duration-300 font-medium cursor-pointer"
                                 >
                                     {item}

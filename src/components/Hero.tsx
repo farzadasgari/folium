@@ -12,7 +12,7 @@ const Hero = () => {
         <section
             id="home"
             className="min-h-screen flex items-center justify-center
-        relative overflow-hidden w-full"
+        relative overflow-hidden w-full dark:bg-slate-900/80"
         >
             <div className="text-center z-10">
                 <div className="mb-8">
