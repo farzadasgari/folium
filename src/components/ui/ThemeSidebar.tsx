@@ -50,12 +50,12 @@ const ThemeSidebar = () => {
         <>
             {isOpen && (
                 <div
-                    className="fixed inset-0 bg-black/20 backdrop-blur-sm z-30"
+                    className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
                     onClick={() => setIsOpen(false)}
                 />
             )}
             <div
-                className={`fixed top-1/2 -translate-y-1/2 z-40 transition-all duration-300
+                className={`fixed top-1/2 -translate-y-1/2 z-50 transition-all duration-300
                 ${isOpen ? 'right-0' : '-right-80'}`}
             >
                 <div
@@ -125,7 +125,7 @@ const ThemeSidebar = () => {
             <button
                 data-sidebar-toggle
                 onClick={() => setIsOpen(!isOpen)}
-                className={`fixed top-1/2 -translate-y-1/2 z-40 p-2 md:pd-3 transition-all duration-300 shadow-lg hover:shadow-xl
+                className={`fixed top-1/2 -translate-y-1/2 z-50 p-2 md:pd-3 transition-all duration-300 shadow-lg hover:shadow-xl
                     dark:bg-purple-400 dark:hover:bg-purple-600 bg-purple-900 hover:bg-purple-700 text-white rounded-l-xl border-0 outline-none cursor-pointer
                     ${isOpen ? 'right-80' : 'right-0'}`}
             >
