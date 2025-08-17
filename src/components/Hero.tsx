@@ -18,7 +18,7 @@ const Hero = () => {
                 <div className="mb-8">
                     <div
                         className="w-40 h-40 mx-auto rounded-full overflow-hidden
-                    shadow-2xl ring-4 ring-purple-400/20"
+                    shadow-2xl ring-4 ring-white/40 dark:ring-white/70"
                     >
                         <img
                             className="w-full h-full object-cover"
@@ -27,17 +27,16 @@ const Hero = () => {
                         />
                     </div>
                 </div>
-                <div className="mb-6 text-5xl md:text-7xl font-bold text-transparent">
-                    <h1 className="text-slate-700">John Doe</h1>
+                <div className="mb-6 text-5xl md:text-7xl font-bold">
+                    <h1 className="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 text-transparent bg-clip-text dark:from-white dark:via-slate-300 dark:to-white">John Doe</h1>
                 </div>
                 <div className="mb-8">
-                    <p className="text-xl md:text-2xl text-slate-600">
-                        CEO and product architect of Tesla | Founder and CEO of
-                        xAI
+                    <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300">
+                        CEO and product architect of Tesla | Founder and CEO of xAI
                     </p>
                 </div>
                 <div className="mb-12">
-                    <div className="text-lg text-slate-500 max-w-3xl leading-relaxed">
+                    <div className="text-lg text-slate-500 dark:text-slate-400 max-w-3xl leading-relaxed">
                         <ul className="space-y-2 md:columns-2 md:gap-4 ml-4">
                             {occupation.map((item) => (
                                 <li className="flex items-start">
@@ -50,7 +49,7 @@ const Hero = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <button
-                        className="cursor-pointer bg-gradient-to-r from-purple-500 to-purple-700
+                        className="cursor-pointer bg-gradient-to-r from-purple-400 to-purple-600
                     hover:shadow-lg text-white px-8 py-4 rounded-full font-semibold transition-all
                     duration-300 transform-gpu hover:scale-[1.05] shadow-md"
                     >
