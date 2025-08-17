@@ -21,7 +21,9 @@ const About = () => {
                     <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-purple-400/20 hover:border-purple-400/80 transition-all duration-300">
                         <div className="flex items-center mb-6">
                             <User className="w-8 h-8 text-purple-400 mr-3" />
-                            <h3 className="text-2xl font-semibold dark:text-slate-100">My Story</h3>
+                            <h3 className="text-2xl font-semibold dark:text-slate-100">
+                                My Story
+                            </h3>
                         </div>
                         <p className="text-slate-600 dark:text-slate-200 leading-relaxed mb-6">
                             Lorem ipsum dolor sit amet consectetur adipisicing

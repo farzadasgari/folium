@@ -28,11 +28,14 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className="mb-6 text-5xl md:text-7xl font-bold">
-                    <h1 className="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 text-transparent bg-clip-text dark:from-white dark:via-slate-300 dark:to-white">John Doe</h1>
+                    <h1 className="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 text-transparent bg-clip-text dark:from-white dark:via-slate-300 dark:to-white">
+                        John Doe
+                    </h1>
                 </div>
                 <div className="mb-8">
                     <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-200">
-                        CEO and product architect of Tesla | Founder and CEO of xAI
+                        CEO and product architect of Tesla | Founder and CEO of
+                        xAI
                     </p>
                 </div>
                 <div className="mb-12">
