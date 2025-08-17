@@ -126,13 +126,13 @@ const ThemeSidebar = () => {
                 data-sidebar-toggle
                 onClick={() => setIsOpen(!isOpen)}
                 className={`fixed top-1/2 -translate-y-1/2 z-40 p-2 md:pd-3 transition-all duration-300 shadow-lg hover:shadow-xl
-                    bg-purple-400 hover:bg-purple-600 dark:bg-purple-900 dark:hover:bg-purple-700 text-white rounded-l-xl border-0 outline-none cursor-pointer
+                    dark:bg-purple-400 dark:hover:bg-purple-600 bg-purple-900 hover:bg-purple-700 text-white rounded-l-xl border-0 outline-none cursor-pointer
                     ${isOpen ? 'right-80' : 'right-0'}`}
             >
                 {isOpen ? (
-                    <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
+                    <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />
                 ) : (
-                    <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
+                    <ChevronLeft className="w-4 h-4 md:w-6 md:h-6" />
                 )}
             </button>
         </>
