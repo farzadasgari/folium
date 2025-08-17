@@ -12,7 +12,7 @@ const Hero = () => {
         <section
             id="home"
             className="min-h-screen flex items-center justify-center
-        relative overflow-hidden w-full dark:bg-slate-900/80"
+        relative overflow-hidden w-full bg-gradient-to-bl from-slate-50 via-purple-400/30 to-slate-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900"
         >
             <div className="text-center z-10">
                 <div className="mb-8">
@@ -31,12 +31,12 @@ const Hero = () => {
                     <h1 className="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 text-transparent bg-clip-text dark:from-white dark:via-slate-300 dark:to-white">John Doe</h1>
                 </div>
                 <div className="mb-8">
-                    <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300">
+                    <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-200">
                         CEO and product architect of Tesla | Founder and CEO of xAI
                     </p>
                 </div>
                 <div className="mb-12">
-                    <div className="text-lg text-slate-500 dark:text-slate-400 max-w-3xl leading-relaxed">
+                    <div className="text-lg text-slate-500 dark:text-slate-300 max-w-3xl leading-relaxed">
                         <ul className="space-y-2 md:columns-2 md:gap-4 ml-4">
                             {occupation.map((item) => (
                                 <li className="flex items-start">
@@ -50,7 +50,7 @@ const Hero = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <button
                         className="cursor-pointer bg-gradient-to-r from-purple-400 to-purple-600
-                    hover:shadow-lg text-white px-8 py-4 rounded-full font-semibold transition-all
+                    hover:shadow-lg text-white px-8 py-4 rounded-full font-bold transition-all
                     duration-300 transform-gpu hover:scale-[1.05] shadow-md"
                     >
                         View My Work
@@ -58,7 +58,7 @@ const Hero = () => {
 
                     <button
                         className="cursor-pointer border-2 border-purple-400 text-purple-400
-                    hover:bg-purple-400 hover:text-white px-8 py-4 rounded-full font-semibold transition-all
+                    hover:bg-purple-400 hover:text-white px-8 py-4 rounded-full font-bold transition-all
                     duration-300 transform-gpu hover:scale-[1.05]"
                     >
                         Get In Touch

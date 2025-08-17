@@ -9,10 +9,7 @@ import ThemeSidebar from '../components/ui/ThemeSidebar';
 
 const Index = () => {
     return (
-        <div
-            className="min-h-screen transition-all duration-500 bg-gradient-to-br
-        from-slate-50 via-purple-400/30 to-slate-100 text-slate-900"
-        >
+        <div className="min-h-screen transition-all duration-500 bg-gradient-to-br">
             <Navbar />
             <ThemeSidebar />
             <Hero />
