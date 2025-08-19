@@ -7,7 +7,7 @@ import {
     ChevronRight,
     Sun,
 } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 /**
  * ThemeSidebar Component
@@ -25,29 +25,22 @@ import { useEffect, useState } from 'react';
  * - Backdrop overlay when open for better UX
  * - Accessible icons and labels
  */
-const ThemeSidebar = () => {
+
+interface ThemeSidebarProps {
+    theme: string;
+    setTheme: (theme: string) => void;
+    darkMode: boolean;
+    toggleTheme: () => void;
+}
+
+const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
+    theme,
+    setTheme,
+    darkMode,
+    toggleTheme,
+}) => {
     // State to control sidebar visibility
     const [isOpen, setIsOpen] = useState(false);
-
-    // Current theme mode: 'light' or 'dark'
-    // Loads from localStorage or defaults to 'light'
-    const [mode, setMode] = useState<'light' | 'dark'>(
-        () => (localStorage.getItem('theme') as 'light' | 'dark') || 'light'
-    );
-
-    /**
-     * Effect: Sync document class and localStorage with current mode
-     * Adds or removes 'dark' class on <html> element to enable dark mode styles
-     * Updates localStorage whenever mode changes
-     */
-    useEffect(() => {
-        if (mode === 'dark') {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-        localStorage.setItem('theme', mode);
-    }, [mode]);
 
     // List of available color themes (currently UI-only, not functional)
     const themes = [
@@ -105,15 +98,12 @@ const ThemeSidebar = () => {
                             className="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 
                                 dark:bg-slate-900/80 dark:hover:bg-slate-900 
                                 transition-colors duration-300 transform transform-gpu hover:scale-[1.1] cursor-pointer"
-                            onClick={() =>
-                                setMode(mode === 'light' ? 'dark' : 'light')
-                            }
-                            aria-label={`Switch to ${mode === 'light' ? 'dark' : 'light'} mode`}
+                            onClick={toggleTheme}
                         >
-                            {mode === 'light' ? (
-                                <Moon className="w-4 h-4 text-slate-600" />
-                            ) : (
+                            {darkMode ? (
                                 <Sun className="w-4 h-4 text-slate-300" />
+                            ) : (
+                                <Moon className="w-4 h-4 text-slate-600" />
                             )}
                         </button>
                     </div>
@@ -125,19 +115,24 @@ const ThemeSidebar = () => {
                             Color Themes
                         </h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-                            {themes.map((theme, index) => (
+                            {themes.map((t) => (
                                 <button
-                                    key={index}
-                                    className="p-2 md:p-3 rounded-lg border-2 transition-all duration-300 
-                                        transform transform-gpu hover:scale-[1.1] text-slate-700 dark:text-slate-200 
-                                        border-transparent hover:border-slate-300 cursor-pointer"
-                                    aria-label={`Apply ${theme.name} theme`}
-                                    // Note: Theme switching logic not implemented yet
+                                    key={t.id}
+                                    onClick={() => setTheme(t.id)}
+                                    className={`p-2 md:p-3 rounded-lg border-2 transition-all duration-300 
+                                        transform transform-gpu text-slate-700 dark:text-slate-200 
+                                         cursor-pointer
+                                        ${
+                                            t.id === theme
+                                                ? 'border-current shadow-md scale-[1.1]'
+                                                : 'border-transparent hover:border-slate-300 hover:scale-[1.1]'
+                                        }
+                                        `}
                                 >
                                     <div
-                                        className={`w-5 h-5 rounded-full md:w-6 md:h-6 ${theme.color} mx-auto mb-1`}
+                                        className={`w-5 h-5 rounded-full md:w-6 md:h-6 ${t.color} mx-auto mb-1`}
                                     ></div>
-                                    <div className="text-xs">{theme.name}</div>
+                                    <div className="text-xs">{t.name}</div>
                                 </button>
                             ))}
                         </div>
@@ -175,10 +170,6 @@ const ThemeSidebar = () => {
                     shadow-lg hover:shadow-xl dark:bg-purple-400 dark:hover:bg-purple-600 
                     bg-purple-900 hover:bg-purple-700 text-white rounded-l-xl border-0 outline-none cursor-pointer
                     ${isOpen ? 'right-80' : 'right-0'}`}
-                aria-expanded={isOpen}
-                aria-label={
-                    isOpen ? 'Close settings panel' : 'Open settings panel'
-                }
             >
                 {isOpen ? (
                     <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />
