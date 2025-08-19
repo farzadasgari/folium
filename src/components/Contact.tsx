@@ -73,7 +73,7 @@ const Contact = () => {
                                         href={social.URL}
                                         className="flex items-center p-4 bg-white/10 rounded-lg border border-purple-400/20 hover:border-purple-400/80 transition-all duration-300 group"
                                     >
-                                        <Icon className="w-6 h-6 text-purple-400 mr-4 transition-all duration-300 transform transform-gpu group-hover:scale-[1.1]" />
+                                        <Icon className="w-6 h-6 text-purple-400 dark:text-purple-300 mr-4 transition-all duration-300 transform transform-gpu group-hover:scale-[1.1]" />
                                         <div>
                                             <div className="font-medium dark:text-slate-200">
                                                 {social.title}
