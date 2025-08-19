@@ -1,24 +1,52 @@
 import { User, Code, Download } from 'lucide-react';
 import SectionTitle from './ui/SectionTitle';
 
+/**
+ * About Component
+ *
+ * A two-column section that introduces the user with:
+ * - A personal story (left column)
+ * - A list of skills/services offered (right column)
+ * - A "Download Resume" link with icon
+ *
+ * Styled with glassmorphism, gradient backgrounds, and smooth hover effects.
+ * Responsive layout using Tailwind’s grid system.
+ */
 const About = () => {
+    // List of professional skills or services the user offers
     const iDo = [
-        'Full-Stack Web Developement',
+        'Full-Stack Web Development', // Fixed typo: 'Developement' → 'Development'
         'Responsive UI/UX Design',
-        'Modern JavaScript FrameWorks',
+        'Modern JavaScript Frameworks', // Pluralized for consistency
         'API Development & Integration',
     ];
 
     return (
         <section
             id="about"
-            className="py-20 px-4 bg-gradient-to-bl from-slate-50 via-purple-100/50 to-slate-100 dark:from-slate-900 dark:via-purple-950 dark:to-slate-900"
+            className="
+                py-20 px-4
+                bg-gradient-to-bl 
+                from-slate-50 via-purple-100/50 to-slate-100
+                dark:from-slate-900 dark:via-purple-950 dark:to-slate-900
+            "
         >
             <div className="max-w-6xl mx-auto">
+                {/* Section Title */}
                 <SectionTitle text="About Me" />
 
+                {/* Two-column layout (stacks on mobile) */}
                 <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-purple-400/20 hover:border-purple-400/80 transition-all duration-300">
+                    {/* Left Column: Personal Story */}
+                    <div
+                        className="
+                            bg-white/5 backdrop-blur-sm
+                            rounded-2xl p-8
+                            border border-purple-400/20 hover:border-purple-400/80
+                            transition-all duration-300
+                            transform-gpu hover:shadow-lg
+                        "
+                    >
                         <div className="flex items-center mb-6">
                             <User className="w-8 h-8 text-purple-400 mr-3" />
                             <h3 className="text-2xl font-semibold dark:text-slate-100">
@@ -36,27 +64,54 @@ const About = () => {
                             elit. Maiores ea, voluptatibus quidem quaerat illo.
                         </p>
                     </div>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-purple-400/20 hover:border-purple-400/80 transition-all duration-300">
+
+                    {/* Right Column: Skills & Resume */}
+                    <div
+                        className="
+                            bg-white/5 backdrop-blur-sm
+                            rounded-2xl p-8
+                            border border-purple-400/20 hover:border-purple-400/80
+                            transition-all duration-300
+                            transform-gpu hover:shadow-lg
+                        "
+                    >
                         <div className="flex items-center mb-6">
                             <Code className="w-8 h-8 text-purple-400 mr-3" />
                             <h3 className="text-2xl font-semibold dark:text-slate-100">
                                 What I Do
                             </h3>
                         </div>
+
+                        {/* List of skills with bullet points */}
                         <div className="space-y-4">
-                            {iDo.map((item) => (
-                                <div className="flex items-center">
-                                    <div className="w-3 h-3 bg-purple-400 rounded-full mr-3 dark:text-slate-400"></div>
+                            {iDo.map((item, index) => (
+                                <div className="flex items-center" key={index}>
+                                    <div className="w-3 h-3 bg-purple-400 rounded-full mr-3"></div>
                                     <span className="text-slate-600 dark:text-slate-200">
                                         {item}
                                     </span>
                                 </div>
                             ))}
                         </div>
+
+                        {/* Resume Download Link */}
                         <div className="mt-4">
-                            <a href="/folium/resume.pdf" download>
-                                <div className="inline-flex items-center text-purple-600 hover:text-purple-400 dark:text-purple-300 dark:hover:text-purple-400 transition-colors duration-300">
-                                    <Download className="h-4 w-4 mr-3" />{' '}
+                            <a
+                                href="/folium/resume.pdf"
+                                download
+                                className="inline-flex"
+                                aria-label="Download resume as PDF"
+                            >
+                                <div
+                                    className="
+                                    inline-flex items-center
+                                    text-purple-600 hover:text-purple-400
+                                    dark:text-purple-300 dark:hover:text-purple-400
+                                    transition-colors duration-300
+                                    group
+                                "
+                                >
+                                    <Download className="h-4 w-4 mr-3" />
                                     Download Resume
                                 </div>
                             </a>
