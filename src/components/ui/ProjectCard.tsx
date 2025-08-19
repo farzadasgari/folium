@@ -32,10 +32,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 </div>
             </div>
             <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-lg font-semibold mb-3 text-slate-900 group-hover:text-purple-400 transition-color duration-300">
+                <h3 className="text-lg font-semibold mb-3 text-slate-900 dark:text-slate-100 group-hover:text-purple-400 dark:group-hover:text-purple-200 transition-color duration-300">
                     {project.title}
                 </h3>
-                <p className="text-slate-600 text-sm mb-4 leading-relaxed flex-grow">
+                <p className="text-slate-600 dark:text-slate-200 text-sm mb-4 leading-relaxed flex-grow">
                     {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -53,14 +53,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                     <a
                         href={project.liveURL}
                         target="_blank"
-                        className="flex-1 text-white bg-gradient-to-r from-purple-400 to-purple-600 hover:text-gray-100 hover:shadow-lg text-center py-2 px-4 rounded-lg text-sm font-medium transition-all duration-300 transform transform-gpu hover:scale-[1.01]"
+                        className="flex-1 text-white dark:text-slate-800 bg-gradient-to-r from-purple-400 to-purple-600 dark:from-purple-300 dark:to-purple-400 hover:text-slate-100 dark:hover:text-slate-900 hover:shadow-lg text-center py-2 px-4 rounded-lg text-sm font-medium transition-all duration-300 transform transform-gpu hover:scale-[1.01]"
                     >
                         Live Demo
                     </a>
                     <a
                         href={project.githubURL}
                         target="_blank"
-                        className="text-slate-500 hover:text-purple-400 transition-all duration-300 transform transform-gpu hover:scale-[1.1] p-2 rounded-lg hover:bg-gray-500/5"
+                        className="text-slate-500 hover:text-purple-400 dark:text-slate-100 dark:hover:text-purple-200 transition-all duration-300 transform transform-gpu hover:scale-[1.1] p-2 rounded-lg hover:bg-gray-500/5"
                     >
                         <Github className="w-5 h-5" />
                     </a>
