@@ -1,7 +1,28 @@
 import SectionTitle from './ui/SectionTitle';
 import ProjectCard from './ui/ProjectCard';
 
+/**
+ * Projects Component
+ *
+ * Displays a responsive grid of project cards showcasing:
+ * - Personal or professional projects with images, titles, descriptions, and tech tags
+ * - Live demo and GitHub links (currently placeholders)
+ *
+ * Features:
+ * - Responsive layout: 1 column on mobile, 2 on tablet, 3 on desktop
+ * - Reusable ProjectCard components
+ * - Section-level gradient background (light/dark mode compatible)
+ * - Semantic HTML with accessible structure
+ */
 const Projects = () => {
+    // Project data: List of projects to display in cards
+    // Each project includes:
+    // - imageURL: Local path to preview image (WebP for performance)
+    // - title: Project name
+    // - description: Brief summary of functionality and purpose
+    // - topics: Tech stack or domain keywords
+    // - liveURL: Link to live deployment (placeholder: '#')
+    // - githubURL: Link to source code (placeholder: '#')
     const projects = [
         {
             imageURL: '/folium/projects/project1.webp',
@@ -73,10 +94,19 @@ const Projects = () => {
     return (
         <section
             id="projects"
-            className="py-20 px-4 bg-gradient-to-bl from-slate-50 via-purple-100/50 to-slate-100 dark:from-slate-900 dark:via-purple-950 dark:to-slate-900"
+            className="
+                py-20 px-4
+                bg-gradient-to-bl 
+                from-slate-50 via-purple-100/50 to-slate-100
+                dark:from-slate-900 dark:via-purple-950 dark:to-slate-900
+            "
+            aria-labelledby="projects-title"
         >
             <div className="max-w-6xl mx-auto">
+                {/* Section Header */}
                 <SectionTitle text="Projects" />
+
+                {/* Grid Layout for Project Cards */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
                         <ProjectCard
