@@ -3,6 +3,27 @@ import { Mail, Linkedin, Github } from 'lucide-react';
 import SectionTitle from './ui/SectionTitle';
 
 const Contact = () => {
+    const socials = [
+        {
+            URL: 'mailto:khufarzadasgari@gmail.com',
+            icon: Mail,
+            title: 'Email',
+            displayURL: 'khufarzadasgari@gmail.com',
+        },
+        {
+            URL: 'https://github.com/farzadasgari',
+            icon: Github,
+            title: 'GitHub',
+            displayURL: 'https://github.com/farzadasgari',
+        },
+        {
+            URL: 'https://www.linkedin.com/in/farzad-asgari/',
+            icon: Linkedin,
+            title: 'LinkedIn',
+            displayURL: 'https://www.linkedin.com/in/farzad-asgari/',
+        },
+    ];
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -32,52 +53,38 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-20 px-4">
+        <section
+            id="contact"
+            className="py-20 px-4 bg-gradient-to-bl from-slate-50 via-purple-400/30 to-slate-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900"
+        >
             <div className="max-w-6xl mx-auto">
                 <SectionTitle text="Get in Touch" />
 
                 <div className="grid md:grid-cols-2 gap-12">
                     <div>
-                        <h3 className="text-2xl font-semibold mb-8">
+                        <h3 className="text-2xl font-semibold mb-8 dark:text-slate-100">
                             Let's Connect!
                         </h3>
                         <div className="space-y-6">
-                            <a
-                                href="mailto:khufarzadasgari@gmail.com"
-                                className="flex items-center p-4 bg-white/10 rounded-lg border border-purple-400/20 hover:border-purple-400/80 transition-all duration-300 group"
-                            >
-                                <Mail className="w-6 h-6 text-purple-400 mr-4 transition-all duration-300 transform transform-gpu group-hover:scale-[1.1]" />
-                                <div>
-                                    <div className="font-medium">Email</div>
-                                    <div className="text-slate-500 text-sm">
-                                        khufarzadasgari@gmail.com
-                                    </div>
-                                </div>
-                            </a>
-                            <a
-                                href="https://github.com/farzadasgari"
-                                className="flex items-center p-4 bg-white/10 rounded-lg border border-purple-400/20 hover:border-purple-400/80 transition-all duration-300 group"
-                            >
-                                <Github className="w-6 h-6 text-purple-400 mr-4 transition-all duration-300 transform transform-gpu group-hover:scale-[1.1]" />
-                                <div>
-                                    <div className="font-medium">Github</div>
-                                    <div className="text-slate-500 text-sm">
-                                        https://github.com/farzadasgari
-                                    </div>
-                                </div>
-                            </a>
-                            <a
-                                href="https://www.linkedin.com/in/farzad-asgari/"
-                                className="flex items-center p-4 bg-white/10 rounded-lg border border-purple-400/20 hover:border-purple-400/80 transition-all duration-300 group"
-                            >
-                                <Linkedin className="w-6 h-6 text-purple-400 mr-4 transition-all duration-300 transform transform-gpu group-hover:scale-[1.1]" />
-                                <div>
-                                    <div className="font-medium">Linkedin</div>
-                                    <div className="text-slate-500 text-sm">
-                                        https://www.linkedin.com/in/farzad-asgari/
-                                    </div>
-                                </div>
-                            </a>
+                            {socials.map((social) => {
+                                const Icon = social.icon;
+                                return (
+                                    <a
+                                        href={social.URL}
+                                        className="flex items-center p-4 bg-white/10 rounded-lg border border-purple-400/20 hover:border-purple-400/80 transition-all duration-300 group"
+                                    >
+                                        <Icon className="w-6 h-6 text-purple-400 mr-4 transition-all duration-300 transform transform-gpu group-hover:scale-[1.1]" />
+                                        <div>
+                                            <div className="font-medium dark:text-slate-200">
+                                                {social.title}
+                                            </div>
+                                            <div className="text-slate-500 text-sm dark:text-slate-300">
+                                                {social.displayURL}
+                                            </div>
+                                        </div>
+                                    </a>
+                                );
+                            })}
                         </div>
                     </div>
 
@@ -86,7 +93,7 @@ const Contact = () => {
                             <div className="mt-3">
                                 <label
                                     htmlFor="name"
-                                    className="block text-sm font-medium mb-2"
+                                    className="block text-sm font-medium mb-2 dark:text-slate-200"
                                 >
                                     Name
                                 </label>
@@ -98,13 +105,13 @@ const Contact = () => {
                                     onChange={handleInputChange}
                                     required
                                     placeholder="Your Name"
-                                    className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90"
+                                    className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90 dark:placeholder:text-slate-300/90"
                                 />
                             </div>
                             <div className="mt-3">
                                 <label
                                     htmlFor="email"
-                                    className="block text-sm font-medium mb-2"
+                                    className="block text-sm font-medium mb-2 dark:text-slate-200"
                                 >
                                     Email
                                 </label>
@@ -116,13 +123,13 @@ const Contact = () => {
                                     onChange={handleInputChange}
                                     required
                                     placeholder="your_email@example.com"
-                                    className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90"
+                                    className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90 dark:placeholder:text-slate-300/90"
                                 />
                             </div>
                             <div className="mt-3">
                                 <label
                                     htmlFor="message"
-                                    className="block text-sm font-medium mb-2"
+                                    className="block text-sm font-medium mb-2 dark:text-slate-200"
                                 >
                                     Message
                                 </label>
@@ -134,7 +141,7 @@ const Contact = () => {
                                     required
                                     rows={5}
                                     placeholder="Tell Me About Your Project..."
-                                    className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90"
+                                    className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90 dark:placeholder:text-slate-300/90"
                                     style={{
                                         resize: 'none',
                                     }}
