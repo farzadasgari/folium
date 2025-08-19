@@ -19,7 +19,7 @@ const Hero = () => {
         <section
             id="home"
             className="min-h-screen flex items-center justify-center
-        relative overflow-hidden w-full bg-gradient-to-bl from-slate-50 via-purple-400/30 to-slate-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900"
+        relative overflow-hidden w-full bg-gradient-to-bl from-slate-50 via-purple-100/50 to-slate-100 dark:from-slate-900 dark:via-purple-950 dark:to-slate-900"
         >
             <div className="text-center z-10">
                 <div className="mb-8">
