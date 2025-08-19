@@ -35,7 +35,10 @@ const Skills = () => {
     ];
 
     return (
-        <section id="skills" className="py-20 px-4">
+        <section
+            id="skills"
+            className="py-20 px-4 bg-gradient-to-bl from-slate-50 via-purple-400/30 to-slate-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900"
+        >
             <div className="max-w-6xl mx-auto">
                 <SectionTitle text="Skills & Expertise" />
                 <div className="grid md:grid-cols-3 gap-8">
@@ -46,7 +49,7 @@ const Skills = () => {
                         >
                             <div className="flex items-center mb-6">
                                 <Code className="w-6 h-6 text-purple-400 mr-3" />
-                                <h3 className="text-xl font-semibold">
+                                <h3 className="text-xl font-semibold dark:text-slate-100">
                                     {category.title}
                                 </h3>
                             </div>
@@ -55,17 +58,17 @@ const Skills = () => {
                                 {category.skills.map((skill) => (
                                     <div key={skill.name} className="space-y-2">
                                         <div className="flex justify-between items-center">
-                                            <span className="text-slate-600">
+                                            <span className="text-slate-600 dark:text-slate-200">
                                                 {skill.name}
                                             </span>
-                                            <span className="text-purple-400 text-sm">
+                                            <span className="text-purple-400 dark:text-slate-300 text-sm">
                                                 {skill.level}%
                                             </span>
                                         </div>
 
-                                        <div className="w-full bg-slate-300 rounded-full h-2">
+                                        <div className="w-full bg-slate-300 dark:bg-slate-300/25 rounded-full h-2">
                                             <div
-                                                className="bg-gradient-to-r from-purple-400 to bg-purple-600 h-2 rounded-full transition-all duration-300"
+                                                className="bg-gradient-to-r from-purple-400 to-purple-600 dark:from-purple-400 dark:to-purple-300 h-2 rounded-full transition-all duration-300"
                                                 style={{
                                                     width: `${skill.level}%`,
                                                 }}
