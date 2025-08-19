@@ -1,9 +1,9 @@
 {
   "name": "folium",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
-  "description": "A Responsive React-TS + Tailwind Portfolio Template",
+  "description": "A modern, responsive portfolio template built with React, TypeScript, and Tailwind CSS. This template helps developers quickly create a professional portfolio to showcase projects, skills, and experience.",
   "keywords": [
     "react",
     "vite",
