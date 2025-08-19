@@ -2,7 +2,26 @@ import React, { useState } from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
 import SectionTitle from './ui/SectionTitle';
 
+/**
+ * Contact Component
+ *
+ * A two-column section allowing visitors to get in touch.
+ * Features:
+ * - List of social/contact links with icons
+ * - Contact form with name, email, and message fields
+ * - Client-side form validation (required fields)
+ * - Success toast notification after submission
+ * - Responsive layout (stacked on mobile, side-by-side on desktop)
+ *
+ * Note: Form currently handles UI submission only (no backend integration).
+ */
 const Contact = () => {
+    // Social media and contact links
+    // Each link includes:
+    // - URL: The destination (mailto or https)
+    // - icon: Lucide icon component to render
+    // - title: Display name for the platform
+    // - displayURL: Text shown in the UI (can be truncated or formatted)
     const socials = [
         {
             URL: 'mailto:khufarzadasgari@gmail.com',
@@ -11,27 +30,33 @@ const Contact = () => {
             displayURL: 'khufarzadasgari@gmail.com',
         },
         {
-            URL: 'https://github.com/farzadasgari',
+            URL: 'https://github.com/farzadasgari  ',
             icon: Github,
             title: 'GitHub',
-            displayURL: 'https://github.com/farzadasgari',
+            displayURL: 'https://github.com/farzadasgari  ',
         },
         {
-            URL: 'https://www.linkedin.com/in/farzad-asgari/',
+            URL: 'https://www.linkedin.com/in/farzad-asgari/  ',
             icon: Linkedin,
             title: 'LinkedIn',
-            displayURL: 'https://www.linkedin.com/in/farzad-asgari/',
+            displayURL: 'https://www.linkedin.com/in/farzad-asgari/  ',
         },
     ];
 
+    // State to manage form input values
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: '',
     });
 
+    // State to track if the form has been successfully submitted
     const [isSubmitted, setIsSubmitted] = useState(false);
 
+    /**
+     * Handles input changes in the form
+     * Updates the corresponding field in formData
+     */
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
@@ -42,6 +67,11 @@ const Contact = () => {
         }));
     };
 
+    /**
+     * Handles form submission
+     * Prevents default form reload, sets isSubmitted to true, and resets form
+     * Note: This is a frontend-only submission indicator
+     */
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitted(true);
@@ -58,9 +88,12 @@ const Contact = () => {
             className="py-20 px-4 bg-gradient-to-bl from-slate-50 via-purple-100/50 to-slate-100 dark:from-slate-900 dark:via-purple-950 dark:to-slate-900"
         >
             <div className="max-w-6xl mx-auto">
+                {/* Section Title */}
                 <SectionTitle text="Get in Touch" />
 
+                {/* Two-column layout: Social Links & Contact Form */}
                 <div className="grid md:grid-cols-2 gap-12">
+                    {/* Left Column: Social Contact Links */}
                     <div>
                         <h3 className="text-2xl font-semibold mb-8 dark:text-slate-100">
                             Let's Connect!
@@ -72,6 +105,7 @@ const Contact = () => {
                                     <a
                                         href={social.URL}
                                         className="flex items-center p-4 bg-white/10 rounded-lg border border-purple-400/20 hover:border-purple-400/80 transition-all duration-300 group"
+                                        key={social.title}
                                     >
                                         <Icon className="w-6 h-6 text-purple-400 dark:text-purple-300 mr-4 transition-all duration-300 transform transform-gpu group-hover:scale-[1.1]" />
                                         <div>
@@ -88,8 +122,10 @@ const Contact = () => {
                         </div>
                     </div>
 
+                    {/* Right Column: Contact Form */}
                     <div>
                         <form onSubmit={handleSubmit}>
+                            {/* Name Input */}
                             <div className="mt-3">
                                 <label
                                     htmlFor="name"
@@ -108,6 +144,8 @@ const Contact = () => {
                                     className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90 dark:placeholder:text-slate-300/90"
                                 />
                             </div>
+
+                            {/* Email Input */}
                             <div className="mt-3">
                                 <label
                                     htmlFor="email"
@@ -126,6 +164,8 @@ const Contact = () => {
                                     className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90 dark:placeholder:text-slate-300/90"
                                 />
                             </div>
+
+                            {/* Message Textarea */}
                             <div className="mt-3">
                                 <label
                                     htmlFor="message"
@@ -147,6 +187,8 @@ const Contact = () => {
                                     }}
                                 />
                             </div>
+
+                            {/* Submit Button */}
                             <div className="mt-3">
                                 <button
                                     type="submit"
@@ -157,6 +199,7 @@ const Contact = () => {
                             </div>
                         </form>
 
+                        {/* Success Toast Notification */}
                         {isSubmitted && (
                             <div
                                 id="toast-success"
