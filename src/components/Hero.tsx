@@ -8,6 +8,13 @@ const Hero = () => {
         'President of the Musk Foundation',
     ];
 
+    const scrollToSection = (sectionID: string) => {
+        const element = document.getElementById(sectionID);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <section
             id="home"
@@ -52,6 +59,7 @@ const Hero = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <button
+                        onClick={() => scrollToSection("projects")}
                         className="cursor-pointer bg-gradient-to-r from-purple-400 to-purple-600
                     hover:shadow-lg text-white px-8 py-4 rounded-full font-bold transition-all
                     duration-300 transform-gpu hover:scale-[1.05] shadow-md"
@@ -60,6 +68,7 @@ const Hero = () => {
                     </button>
 
                     <button
+                        onClick={() => scrollToSection("contact")}
                         className="cursor-pointer border-2 border-purple-400 text-purple-400
                     hover:bg-purple-400 hover:text-white px-8 py-4 rounded-full font-bold transition-all
                     duration-300 transform-gpu hover:scale-[1.05]"
