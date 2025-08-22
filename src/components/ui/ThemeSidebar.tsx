@@ -82,9 +82,26 @@ const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
                     ${isOpen ? 'right-0' : '-right-80'}`}
             >
                 <div
-                    className="bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-l-2xl shadow-2xl 
-                        transition-all duration-300 border border-purple-400/30 dark:border-purple-200/50 
-                        hover:border-purple-400/70 dark:hover:border-purple-200/90 p-4 md:p-6 w-80 max-h-[90vh] overflow-y-auto"
+                    className={` bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-l-2xl shadow-2xl 
+                        transition-all duration-300 border p-4 md:p-6 w-80 max-h-[90vh] overflow-y-auto
+                ${
+                    theme === 'red'
+                        ? 'border-red-400/30 hover:border-red-400/70  dark:border-red-200/50 dark:hover:border-red-200/90'
+                        : theme === 'green'
+                          ? 'border-emerald-400/30 hover:border-emerald-400/70  dark:border-emerald-200/50 dark:hover:border-emerald-200/90'
+                          : theme === 'blue'
+                            ? 'border-blue-400/30 hover:border-blue-400/70  dark:border-blue-200/50 dark:hover:border-blue-200/90'
+                            : theme === 'pink'
+                              ? 'border-pink-400/30 hover:border-pink-400/70  dark:border-pink-200/50 dark:hover:border-pink-200/90'
+                              : theme === 'cyan'
+                                ? 'border-cyan-400/30 hover:border-cyan-400/70  dark:border-cyan-200/50 dark:hover:border-cyan-200/90'
+                                : theme === 'yellow'
+                                  ? 'border-yellow-400/30 hover:border-yellow-400/70  dark:border-yellow-200/50 dark:hover:border-yellow-200/90'
+                                  : theme === 'rose'
+                                    ? 'border-rose-400/30 hover:border-rose-400/70  dark:border-rose-200/50 dark:hover:border-rose-200/90'
+                                    : 'border-purple-400/30 hover:border-purple-400/70  dark:border-purple-200/50 dark:hover:border-purple-200/90'
+                }     
+                        `}
                     data-sidebar
                     aria-label="Theme and Language Settings"
                 >
@@ -167,9 +184,26 @@ const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
                 data-sidebar-toggle
                 onClick={() => setIsOpen(!isOpen)}
                 className={`fixed top-1/2 -translate-y-1/2 z-50 p-2 md:p-3 transition-all duration-300 
-                    shadow-lg hover:shadow-xl dark:bg-purple-400 dark:hover:bg-purple-600 
-                    bg-purple-900 hover:bg-purple-700 text-white rounded-l-xl border-0 outline-none cursor-pointer
-                    ${isOpen ? 'right-80' : 'right-0'}`}
+                    shadow-lg hover:shadow-xl text-white rounded-l-xl border-0 outline-none cursor-pointer
+                    ${isOpen ? 'right-80' : 'right-0'}
+                    ${
+                        theme === 'red'
+                            ? 'bg-red-900 hover:bg-red-700 dark:bg-red-400 dark:hover:bg-red-600'
+                            : theme === 'green'
+                              ? 'bg-emerald-900 hover:bg-emerald-700 dark:bg-emerald-400 dark:hover:bg-emerald-600'
+                              : theme === 'blue'
+                                ? 'bg-blue-900 hover:bg-blue-700 dark:bg-blue-400 dark:hover:bg-blue-600'
+                                : theme === 'pink'
+                                  ? 'bg-pink-900 hover:bg-pink-700 dark:bg-pink-400 dark:hover:bg-pink-600'
+                                  : theme === 'cyan'
+                                    ? 'bg-cyan-900 hover:bg-cyan-700 dark:bg-cyan-400 dark:hover:bg-cyan-600'
+                                    : theme === 'yellow'
+                                      ? 'bg-yellow-900 hover:bg-yellow-700 dark:bg-yellow-400 dark:hover:bg-yellow-600'
+                                      : theme === 'rose'
+                                        ? 'bg-rose-900 hover:bg-rose-700 dark:bg-rose-400 dark:hover:bg-rose-600'
+                                        : 'bg-purple-900 hover:bg-purple-700 dark:bg-purple-400 dark:hover:bg-purple-600'
+                    }
+                    `}
             >
                 {isOpen ? (
                     <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />
