@@ -27,7 +27,7 @@ const Index = () => {
 
     return (
         <div className="min-h-screen transition-all duration-500 bg-gradient-to-br">
-            <Navbar />
+            <Navbar theme={theme} />
             <ThemeSidebar
                 theme={theme}
                 setTheme={setTheme}
