@@ -1,5 +1,6 @@
 import { User, Code, Download } from 'lucide-react';
 import SectionTitle from './ui/SectionTitle';
+import React from 'react';
 
 /**
  * About Component
@@ -12,7 +13,12 @@ import SectionTitle from './ui/SectionTitle';
  * Styled with glassmorphism, gradient backgrounds, and smooth hover effects.
  * Responsive layout using Tailwind’s grid system.
  */
-const About = () => {
+
+interface AboutProps {
+    theme: string;
+}
+
+const About: React.FC<AboutProps> = ({ theme }) => {
     // List of professional skills or services the user offers
     const iDo = [
         'Full-Stack Web Development', // Fixed typo: 'Developement' → 'Development'
@@ -24,12 +30,12 @@ const About = () => {
     return (
         <section
             id="about"
-            className="
+            className={`
                 py-20 px-4
                 bg-gradient-to-bl 
-                from-slate-50 via-purple-100/50 to-slate-100
-                dark:from-slate-900 dark:via-purple-950 dark:to-slate-900
-            "
+                from-slate-50 via-${theme}-100/50 to-slate-100
+                dark:from-slate-900 dark:via-${theme}-950 dark:to-slate-900
+            `}
         >
             <div className="max-w-6xl mx-auto">
                 {/* Section Title */}
@@ -39,16 +45,16 @@ const About = () => {
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     {/* Left Column: Personal Story */}
                     <div
-                        className="
+                        className={`
                             bg-white/5 backdrop-blur-sm
                             rounded-2xl p-8
-                            border border-purple-400/20 hover:border-purple-400/80
+                            border border-${theme}-400/20 hover:border-${theme}-400/80
                             transition-all duration-300
                             transform-gpu hover:shadow-lg
-                        "
+                        `}
                     >
                         <div className="flex items-center mb-6">
-                            <User className="w-8 h-8 text-purple-400 mr-3" />
+                            <User className={`w-8 h-8 text-${theme}-400 mr-3`} />
                             <h3 className="text-2xl font-semibold dark:text-slate-100">
                                 My Story
                             </h3>
@@ -67,16 +73,16 @@ const About = () => {
 
                     {/* Right Column: Skills & Resume */}
                     <div
-                        className="
+                        className={`
                             bg-white/5 backdrop-blur-sm
                             rounded-2xl p-8
-                            border border-purple-400/20 hover:border-purple-400/80
+                            border border-${theme}-400/20 hover:border-${theme}-400/80
                             transition-all duration-300
                             transform-gpu hover:shadow-lg
-                        "
+                        `}
                     >
                         <div className="flex items-center mb-6">
-                            <Code className="w-8 h-8 text-purple-400 mr-3" />
+                            <Code className={`w-8 h-8 text-${theme}-400 mr-3`} />
                             <h3 className="text-2xl font-semibold dark:text-slate-100">
                                 What I Do
                             </h3>
@@ -86,7 +92,7 @@ const About = () => {
                         <div className="space-y-4">
                             {iDo.map((item, index) => (
                                 <div className="flex items-center" key={index}>
-                                    <div className="w-3 h-3 bg-purple-400 rounded-full mr-3"></div>
+                                    <div className={`w-3 h-3 bg-${theme}-400 rounded-full mr-3`}></div>
                                     <span className="text-slate-600 dark:text-slate-200">
                                         {item}
                                     </span>
@@ -103,13 +109,13 @@ const About = () => {
                                 aria-label="Download resume as PDF"
                             >
                                 <div
-                                    className="
+                                    className={`
                                     inline-flex items-center
-                                    text-purple-600 hover:text-purple-400
-                                    dark:text-purple-300 dark:hover:text-purple-400
+                                    text-${theme}-600 hover:text-${theme}-400
+                                    dark:text-${theme}-300 dark:hover:text-${theme}-400
                                     transition-colors duration-300
                                     group
-                                "
+                                `}
                                 >
                                     <Download className="h-4 w-4 mr-3" />
                                     Download Resume

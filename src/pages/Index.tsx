@@ -35,8 +35,8 @@ const Index = () => {
                 darkMode={darkMode}
                 toggleTheme={toggleTheme}
             />
-            <Hero  theme={theme} />
-            <About />
+            <Hero theme={theme} />
+            <About theme={theme} />
             <Skills />
             <Projects />
             <Contact />
