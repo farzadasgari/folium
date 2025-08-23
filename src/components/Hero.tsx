@@ -13,7 +13,13 @@ import { ArrowDown } from 'lucide-react';
  * - Call-to-action buttons for navigation
  * - Animated downward arrow indicating scrollability
  */
-const Hero = () => {
+
+interface HeroProps {
+    theme: string;
+}
+
+
+const Hero: React.FC<HeroProps> = ({ theme }) => {
     // List of current roles or titles to display under the name
     const occupation = [
         'CEO and product architect of Tesla',
@@ -37,8 +43,8 @@ const Hero = () => {
     return (
         <section
             id="home"
-            className="min-h-screen flex items-center justify-center
-        relative overflow-hidden w-full bg-gradient-to-bl from-slate-50 via-purple-100/50 to-slate-100 dark:from-slate-900 dark:via-purple-950 dark:to-slate-900"
+            className={`min-h-screen flex items-center justify-center
+        relative overflow-hidden w-full bg-gradient-to-bl from-slate-50 via-${theme}-100/50 to-slate-100 dark:from-slate-900 dark:via-${theme}-950 dark:to-slate-900`}
         >
             {/* Main content container (centered, above other elements) */}
             <div className="text-center z-10">
@@ -91,9 +97,9 @@ const Hero = () => {
                     {/* Primary Button: View My Work */}
                     <button
                         onClick={() => scrollToSection('projects')}
-                        className="cursor-pointer bg-gradient-to-r from-purple-400 to-purple-600
+                        className={`cursor-pointer bg-gradient-to-r from-${theme}-400 to-${theme}-600
                     hover:shadow-lg text-white px-8 py-4 rounded-full font-bold transition-all
-                    duration-300 transform-gpu hover:scale-[1.05] shadow-md"
+                    duration-300 transform-gpu hover:scale-[1.05] shadow-md`}
                     >
                         View My Work
                     </button>
@@ -101,9 +107,9 @@ const Hero = () => {
                     {/* Secondary Button: Get In Touch */}
                     <button
                         onClick={() => scrollToSection('contact')}
-                        className="cursor-pointer border-2 border-purple-400 text-purple-400
-                    hover:bg-purple-400 hover:text-white px-8 py-4 rounded-full font-bold transition-all
-                    duration-300 transform-gpu hover:scale-[1.05]"
+                        className={`cursor-pointer border-2 border-${theme}-400 text-${theme}-400
+                    hover:bg-${theme}-400 hover:text-white px-8 py-4 rounded-full font-bold transition-all
+                    duration-300 transform-gpu hover:scale-[1.05]`}
                     >
                         Get In Touch
                     </button>

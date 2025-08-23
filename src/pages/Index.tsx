@@ -7,6 +7,7 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ThemeSidebar from '../components/ui/ThemeSidebar';
+import SafeList from "../components/ban/SafeList";
 
 const Index = () => {
     const [darkMode, setDarkMode] = useState(false);
@@ -34,12 +35,13 @@ const Index = () => {
                 darkMode={darkMode}
                 toggleTheme={toggleTheme}
             />
-            <Hero />
+            <Hero  theme={theme} />
             <About />
             <Skills />
             <Projects />
             <Contact />
             <Footer />
+            <SafeList />
         </div>
     );
 };
