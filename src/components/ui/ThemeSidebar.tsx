@@ -46,7 +46,7 @@ const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
     const themes = [
         { id: 'purple', name: 'Purple', color: 'bg-purple-500' },
         { id: 'red', name: 'Red', color: 'bg-red-500' },
-        { id: 'green', name: 'Green', color: 'bg-emerald-500' },
+        { id: 'emerald', name: 'Green', color: 'bg-emerald-500' },
         { id: 'blue', name: 'Blue', color: 'bg-blue-500' },
         { id: 'pink', name: 'Pink', color: 'bg-pink-500' },
         { id: 'cyan', name: 'Cyan', color: 'bg-cyan-500' },
