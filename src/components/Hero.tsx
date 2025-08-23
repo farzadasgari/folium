@@ -19,7 +19,6 @@ interface HeroProps {
     theme: string;
 }
 
-
 const Hero: React.FC<HeroProps> = ({ theme }) => {
     // List of current roles or titles to display under the name
     const occupation = [

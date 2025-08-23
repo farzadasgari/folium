@@ -1,16 +1,29 @@
 const SafeList = () => {
-    const colors = ["purple", "red", "emerald", "blue", "rose", "pink", "yellow", "cyan"]
+    const colors = [
+        'purple',
+        'red',
+        'emerald',
+        'blue',
+        'rose',
+        'pink',
+        'yellow',
+        'cyan',
+    ];
     return (
         <section className="hidden">
-            {
-                colors.map((c) => (
-                    <>
-                        <span className={`via-${c}-100/50 dark:via-${c}-950 hover:text-${c}-400 dark:hover:text-${c}-300 group-hover:bg-${c}-400 dark:group-hover:bg-${c}-300`} />
-                        <span className={`from-${c}-400 to-${c}-600 dark:from-${c}-200 dark:to-${c}-300`} />
-                        <div className={`bg-${c}-400 text-${c}-600 hover:text-${c}-400 dark:text-${c}-300 dark:hover:text-${c}-400`} />
-                    </>
-                ))
-            }
+            {colors.map((c) => (
+                <>
+                    <span
+                        className={`via-${c}-100/50 dark:via-${c}-950 hover:text-${c}-400 dark:hover:text-${c}-300 group-hover:bg-${c}-400 dark:group-hover:bg-${c}-300`}
+                    />
+                    <span
+                        className={`from-${c}-400 to-${c}-600 dark:from-${c}-200 dark:to-${c}-300`}
+                    />
+                    <div
+                        className={`bg-${c}-400 text-${c}-600 hover:text-${c}-400 dark:text-${c}-300 dark:hover:text-${c}-400`}
+                    />
+                </>
+            ))}
             <button className="border-purple-400 text-purple-400 hover:bg-purple-400" />
             <button className="border-red-400 text-red-400 hover:bg-red-400" />
             <button className="border-emerald-400 text-emerald-400 hover:bg-emerald-400" />
@@ -46,9 +59,8 @@ const SafeList = () => {
             <div className="border border-rose-400/20 hover:border-rose-400/80 " />
             <div className="border border-pink-400/20 hover:border-pink-400/80 " />
             <div className="border border-cyan-400/20 hover:border-cyan-400/80 " />
-
         </section>
-    )
-}
+    );
+};
 
 export default SafeList;

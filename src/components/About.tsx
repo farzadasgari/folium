@@ -54,7 +54,9 @@ const About: React.FC<AboutProps> = ({ theme }) => {
                         `}
                     >
                         <div className="flex items-center mb-6">
-                            <User className={`w-8 h-8 text-${theme}-400 mr-3`} />
+                            <User
+                                className={`w-8 h-8 text-${theme}-400 mr-3`}
+                            />
                             <h3 className="text-2xl font-semibold dark:text-slate-100">
                                 My Story
                             </h3>
@@ -82,7 +84,9 @@ const About: React.FC<AboutProps> = ({ theme }) => {
                         `}
                     >
                         <div className="flex items-center mb-6">
-                            <Code className={`w-8 h-8 text-${theme}-400 mr-3`} />
+                            <Code
+                                className={`w-8 h-8 text-${theme}-400 mr-3`}
+                            />
                             <h3 className="text-2xl font-semibold dark:text-slate-100">
                                 What I Do
                             </h3>
@@ -92,7 +96,9 @@ const About: React.FC<AboutProps> = ({ theme }) => {
                         <div className="space-y-4">
                             {iDo.map((item, index) => (
                                 <div className="flex items-center" key={index}>
-                                    <div className={`w-3 h-3 bg-${theme}-400 rounded-full mr-3`}></div>
+                                    <div
+                                        className={`w-3 h-3 bg-${theme}-400 rounded-full mr-3`}
+                                    ></div>
                                     <span className="text-slate-600 dark:text-slate-200">
                                         {item}
                                     </span>
