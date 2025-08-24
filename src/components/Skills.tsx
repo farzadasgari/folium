@@ -13,7 +13,12 @@ import SectionTitle from './ui/SectionTitle';
  * - Each category (Front-End, Back-End, Tools) in a glassmorphic card
  * - Progress bars reflect skill level from 0–100%
  */
-const Skills = () => {
+
+interface SkillsProps {
+    theme: string;
+}
+
+const Skills: React.FC<SkillsProps> = ({ theme }) => {
     // Array of skill categories
     // Each category has:
     // - title: Name of the category (e.g., "Front-End")
@@ -56,7 +61,7 @@ const Skills = () => {
     return (
         <section
             id="skills"
-            className="py-20 px-4 bg-gradient-to-bl from-slate-50 via-purple-100/50 to-slate-100 dark:from-slate-900 dark:via-purple-950 dark:to-slate-900"
+            className={`py-20 px-4 bg-gradient-to-bl from-slate-50 via-${theme}-100/50 to-slate-100 dark:from-slate-900 dark:via-${theme}-950 dark:to-slate-900`}
         >
             <div className="max-w-6xl mx-auto">
                 {/* Section title centered above the skills grid */}
@@ -68,11 +73,13 @@ const Skills = () => {
                     {SkillCategory.map((category) => (
                         <div
                             key={category.title}
-                            className="g-white/5 backdrop-blur-sm rounded-2xl p-8 border border-purple-400/20 hover:border-purple-400/80 transition-all duration-300"
+                            className={`g-white/5 backdrop-blur-sm rounded-2xl p-8 border border-${theme}-400/20 hover:border-${theme}-400/80 transition-all duration-300`}
                         >
                             {/* Category header with icon and title */}
                             <div className="flex items-center mb-6">
-                                <Code className="w-6 h-6 text-purple-400 mr-3" />
+                                <Code
+                                    className={`w-6 h-6 text-${theme}-400 mr-3`}
+                                />
                                 <h3 className="text-xl font-semibold dark:text-slate-100">
                                     {category.title}
                                 </h3>
@@ -87,7 +94,9 @@ const Skills = () => {
                                             <span className="text-slate-600 dark:text-slate-200">
                                                 {skill.name}
                                             </span>
-                                            <span className="text-purple-400 dark:text-slate-300 text-sm">
+                                            <span
+                                                className={`text-${theme}-400 dark:text-slate-300 text-sm`}
+                                            >
                                                 {skill.level}%
                                             </span>
                                         </div>
@@ -96,7 +105,7 @@ const Skills = () => {
                                         <div className="w-full bg-slate-300 dark:bg-slate-300/25 rounded-full h-2">
                                             {/* Filled portion of progress bar, width based on skill level */}
                                             <div
-                                                className="bg-gradient-to-r from-purple-400 to-purple-600 dark:from-purple-400 dark:to-purple-300 h-2 rounded-full transition-all duration-300"
+                                                className={`bg-gradient-to-r from-${theme}-400 to-${theme}-600 dark:from-${theme}-200 dark:to-${theme}-300 h-2 rounded-full transition-all duration-300`}
                                                 style={{
                                                     width: `${skill.level}%`,
                                                 }}

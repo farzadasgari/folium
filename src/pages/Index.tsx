@@ -36,7 +36,7 @@ const Index = () => {
             />
             <Hero theme={theme} />
             <About theme={theme} />
-            <Skills />
+            <Skills theme={theme} />
             <Projects />
             <Contact />
             <Footer />
@@ -53,6 +53,8 @@ const Index = () => {
                         dark:from-purple-200 dark:to-purple-300 dark:from-blue-200 dark:to-blue-300 dark:from-emerald-200 dark:to-emerald-300 dark:from-red-200 dark:to-red-300 dark:from-yellow-200 dark:to-yellow-300 dark:from-pink-200 dark:to-pink-300 dark:from-rose-200 dark:to-rose-300 dark:from-cyan-200 dark:to-cyan-300
                         hover:text-purple-400 dark:hover:text-purple-300 hover:text-blue-400 dark:hover:text-blue-300 hover:text-emerald-400 dark:hover:text-emerald-300 hover:text-red-400 dark:hover:text-red-300 hover:text-yellow-400 dark:hover:text-yellow-300 hover:text-pink-400 dark:hover:text-pink-300 hover:text-rose-400 dark:hover:text-rose-300 hover:text-cyan-400 dark:hover:text-cyan-300
                         group-hover:bg-purple-400 dark:group-hover:bg-purple-300 group-hover:bg-blue-400 dark:group-hover:bg-blue-300 group-hover:bg-emerald-400 dark:group-hover:bg-emerald-300 group-hover:bg-red-400 dark:group-hover:bg-red-300 group-hover:bg-yellow-400 dark:group-hover:bg-yellow-300 group-hover:bg-pink-400 dark:group-hover:bg-pink-300 group-hover:bg-rose-400 dark:group-hover:bg-rose-300 group-hover:bg-cyan-400 dark:group-hover:bg-cyan-300
+                        border-purple-400/20 border-red-400/20 border-emerald-400/20 border-blue-400/20 border-rose-400/20 border-yellow-400/20 border-pink-400/20 border-cyan-400/20 
+                        hover:border-purple-400/80 hover:border-red-400/80 hover:border-emerald-400/80 hover:border-blue-400/80 hover:border-rose-400/80 hover:border-yellow-400/80 hover:border-pink-400/80 hover:border-cyan-400/80 
                         `;
                 }}
             </>
