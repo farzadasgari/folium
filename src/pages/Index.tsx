@@ -7,7 +7,6 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ThemeSidebar from '../components/ui/ThemeSidebar';
-import SafeList from '../components/ban/SafeList';
 
 const Index = () => {
     const [darkMode, setDarkMode] = useState(false);
@@ -41,7 +40,6 @@ const Index = () => {
             <Projects />
             <Contact />
             <Footer />
-            <SafeList />
         </div>
     );
 };
