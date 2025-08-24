@@ -15,7 +15,12 @@ import SectionTitle from './ui/SectionTitle';
  *
  * Note: Form currently handles UI submission only (no backend integration).
  */
-const Contact = () => {
+
+interface ContactProps {
+    theme: string;
+}
+
+const Contact: React.FC<ContactProps> = ({ theme }) => {
     // Social media and contact links
     // Each link includes:
     // - URL: The destination (mailto or https)
@@ -85,7 +90,7 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            className="py-20 px-4 bg-gradient-to-bl from-slate-50 via-purple-100/50 to-slate-100 dark:from-slate-900 dark:via-purple-950 dark:to-slate-900"
+            className={`py-20 px-4 bg-gradient-to-bl from-slate-50 via-${theme}-100/50 to-slate-100 dark:from-slate-900 dark:via-${theme}-950 dark:to-slate-900`}
         >
             <div className="max-w-6xl mx-auto">
                 {/* Section Title */}
@@ -104,10 +109,12 @@ const Contact = () => {
                                 return (
                                     <a
                                         href={social.URL}
-                                        className="flex items-center p-4 bg-white/10 rounded-lg border border-purple-400/20 hover:border-purple-400/80 transition-all duration-300 group"
+                                        className={`flex items-center p-4 bg-white/10 rounded-lg border border-${theme}-400/20 hover:border-${theme}-400/80 transition-all duration-300 group`}
                                         key={social.title}
                                     >
-                                        <Icon className="w-6 h-6 text-purple-400 dark:text-purple-300 mr-4 transition-all duration-300 transform transform-gpu group-hover:scale-[1.1]" />
+                                        <Icon
+                                            className={`w-6 h-6 text-${theme}-400 dark:text-${theme}-300 mr-4 transition-all duration-300 transform transform-gpu group-hover:scale-[1.1]`}
+                                        />
                                         <div>
                                             <div className="font-medium dark:text-slate-200">
                                                 {social.title}
@@ -141,7 +148,7 @@ const Contact = () => {
                                     onChange={handleInputChange}
                                     required
                                     placeholder="Your Name"
-                                    className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90 dark:placeholder:text-slate-300/90"
+                                    className={`w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-${theme}-400 focus:ring-${theme}-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 dark:text-slate-200 placeholder:text-slate-400/90 dark:placeholder:text-slate-300/90`}
                                 />
                             </div>
 
@@ -161,7 +168,7 @@ const Contact = () => {
                                     onChange={handleInputChange}
                                     required
                                     placeholder="your_email@example.com"
-                                    className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90 dark:placeholder:text-slate-300/90"
+                                    className={`w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-${theme}-400 focus:ring-${theme}-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 dark:text-slate-200 placeholder:text-slate-400/90 dark:placeholder:text-slate-300/90`}
                                 />
                             </div>
 
@@ -181,7 +188,7 @@ const Contact = () => {
                                     required
                                     rows={5}
                                     placeholder="Tell Me About Your Project..."
-                                    className="w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-purple-400 focus:ring-purple-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 placeholder:text-slate-400/90 dark:placeholder:text-slate-300/90"
+                                    className={`w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-${theme}-400 focus:ring-${theme}-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 dark:text-slate-200 placeholder:text-slate-400/90 dark:placeholder:text-slate-300/90`}
                                     style={{
                                         resize: 'none',
                                     }}
@@ -192,7 +199,7 @@ const Contact = () => {
                             <div className="mt-3">
                                 <button
                                     type="submit"
-                                    className="w-full cursor-pointer bg-gradient-to-r from-purple-400 to-purple-600 hover:from-purple-500 hover:to-purple-800 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform-gpu hover:scale-[1.01] shadow-md"
+                                    className={`w-full cursor-pointer bg-gradient-to-r from-${theme}-400 to-${theme}-600 hover:from-${theme}-500 hover:to-${theme}-800 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform-gpu hover:scale-[1.01] shadow-md`}
                                 >
                                     Send Message
                                 </button>
@@ -203,10 +210,10 @@ const Contact = () => {
                         {isSubmitted && (
                             <div
                                 id="toast-success"
-                                className="show-notification flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow-sm dark:text-gray-400 dark:bg-gray-800"
+                                className="show-notification flex items-center w-full max-w-xs p-4 mb-4 text-slate-500 bg-white rounded-lg shadow-sm dark:text-slate-200 dark:bg-slate-800"
                                 role="alert"
                             >
-                                <div className="inline-flex items-center justify-center shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+                                <div className="inline-flex items-center justify-center shrink-0 w-8 h-8 text-emerald-500 bg-emerald-100 rounded-lg dark:bg-emerald-800 dark:text-emerald-200">
                                     <svg
                                         className="w-5 h-5"
                                         aria-hidden="true"
