@@ -189,7 +189,7 @@ const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
                     ${
                         theme === 'red'
                             ? 'bg-red-900 hover:bg-red-700 dark:bg-red-400 dark:hover:bg-red-600'
-                            : theme === 'green'
+                            : theme === 'emerald'
                               ? 'bg-emerald-900 hover:bg-emerald-700 dark:bg-emerald-400 dark:hover:bg-emerald-600'
                               : theme === 'blue'
                                 ? 'bg-blue-900 hover:bg-blue-700 dark:bg-blue-400 dark:hover:bg-blue-600'

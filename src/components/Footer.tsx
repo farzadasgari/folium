@@ -12,7 +12,12 @@ import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
  * Styled with glassmorphism, subtle borders, and hover effects.
  * Adapts layout for mobile and desktop.
  */
-const Footer = () => {
+
+interface FooterProps {
+    theme: string;
+}
+
+const Footer: React.FC<FooterProps> = ({ theme }) => {
     // Get current year for copyright dynamically
     const currentYear = new Date().getFullYear();
 
@@ -45,13 +50,17 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="py-12 px-4 border-t border-purple-400/20 hover:border-purple-400/80 bg-white/50 dark:bg-slate-900 backdrop-blur-sm transition-all duration-300">
+        <footer
+            className={`py-12 px-4 border-t border-${theme}-400/20 hover:${theme}-purple-400/80 bg-white/50 dark:bg-slate-900 backdrop-blur-sm transition-all duration-300`}
+        >
             <div className="max-w-6xl mx-auto">
                 {/* Top section: Brand and Social Links */}
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     {/* Brand Info */}
                     <div className="mb-6 md:mb-0 text-center md:text-left">
-                        <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent mb-2">
+                        <div
+                            className={`text-2xl font-bold bg-gradient-to-r from-${theme}-400 to-${theme}-600 bg-clip-text text-transparent mb-2`}
+                        >
                             John Doe
                         </div>
                         <p className="text-slate-600 text-sm dark:text-slate-200">
@@ -69,7 +78,7 @@ const Footer = () => {
                                     href={social.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-slate-500 dark:text-slate-300 hover:text-purple-400 dark:hover:text-purple-300 transition-all duration-300 transform transform-gpu hover:scale-[1.1] p-2 rounded-lg hover:bg-black/5"
+                                    className={`text-slate-500 dark:text-slate-300 hover:text-${theme}-400 dark:hover:text-${theme}-300 transition-all duration-300 transform transform-gpu hover:scale-[1.1] p-2 rounded-lg hover:bg-black/5 dark:hover:bg-black/30`}
                                     aria-label={social.name}
                                     title={social.name}
                                 >
@@ -86,7 +95,7 @@ const Footer = () => {
                         John Doe © {currentYear} All rights reserved. Made with
                         ❤️ by
                         <a
-                            className="ml-1 text-purple-400 hover:text-purple-600 dark:text-purple-200 dark:hover:text-purple-400 hover:underline transition-all duration-300"
+                            className={`ml-1 text-${theme}-400 hover:text-${theme}-600 dark:text-${theme}-200 dark:hover:text-${theme}-400 hover:underline transition-all duration-300`}
                             href="https://github.com/farzadasgari  "
                         >
                             FarZad
