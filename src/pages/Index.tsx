@@ -40,6 +40,22 @@ const Index = () => {
             <Projects />
             <Contact />
             <Footer />
+
+            <>
+                {() => {
+                    return `
+                        via-purple-100/50 via-blue-100/50 via-red-100/50 via-emerald-100/50 via-pink-100/50 via-rose-100/50 via-cyan-100/50 via-yellow-100/50
+                        dark:via-purple-950 dark:via-blue-950 dark:via-emerald-950 dark:via-red-950 dark:via-yellow-950 dark:via-pink-950 dark:via-rose-950 dark:via-cyan-950
+                        border-purple-400 border-red-400 border-blue-400 border-emerald-400 border-purple-400 border-red-400 border-blue-400 border-emerald-400
+                        text-purple-400 text-red-400 text-blue-400 text-emerald-400 text-yellow-400 text-pink-400 text-rose-400 text-cyan-400
+                        hover:bg-purple-400 hover:bg-red-400 hover:bg-blue-400 hover:bg-emerald-400 hover:bg-yellow-400 hover:bg-pink-400 hover:bg-rose-400 hover:bg-cyan-400
+                        from-purple-400 to-purple-600 from-blue-400 to-blue-600 from-emerald-400 to-emerald-600 from-red-400 to-red-600 from-yellow-400 to-yellow-600 from-pink-400 to-pink-600 from-rose-400 to-rose-600 from-cyan-400 to-cyan-600
+                        dark:from-purple-200 dark:to-purple-300 dark:from-blue-200 dark:to-blue-300 dark:from-emerald-200 dark:to-emerald-300 dark:from-red-200 dark:to-red-300 dark:from-yellow-200 dark:to-yellow-300 dark:from-pink-200 dark:to-pink-300 dark:from-rose-200 dark:to-rose-300 dark:from-cyan-200 dark:to-cyan-300
+                        hover:text-purple-400 dark:hover:text-purple-300 hover:text-blue-400 dark:hover:text-blue-300 hover:text-emerald-400 dark:hover:text-emerald-300 hover:text-red-400 dark:hover:text-red-300 hover:text-yellow-400 dark:hover:text-yellow-300 hover:text-pink-400 dark:hover:text-pink-300 hover:text-rose-400 dark:hover:text-rose-300 hover:text-cyan-400 dark:hover:text-cyan-300
+                        group-hover:bg-purple-400 dark:group-hover:bg-purple-300 group-hover:bg-blue-400 dark:group-hover:bg-blue-300 group-hover:bg-emerald-400 dark:group-hover:bg-emerald-300 group-hover:bg-red-400 dark:group-hover:bg-red-300 group-hover:bg-yellow-400 dark:group-hover:bg-yellow-300 group-hover:bg-pink-400 dark:group-hover:bg-pink-300 group-hover:bg-rose-400 dark:group-hover:bg-rose-300 group-hover:bg-cyan-400 dark:group-hover:bg-cyan-300
+                        `;
+                }}
+            </>
         </div>
     );
 };
