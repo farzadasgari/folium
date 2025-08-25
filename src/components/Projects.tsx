@@ -117,6 +117,7 @@ const Projects: React.FC<ProjectsProps> = ({ theme }) => {
                             key={index}
                             project={project}
                             index={index}
+                            theme={theme}
                         />
                     ))}
                 </div>

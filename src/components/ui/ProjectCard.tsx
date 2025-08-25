@@ -23,6 +23,7 @@ interface Project {
 interface ProjectCardProps {
     project: Project; // The project data to render
     index: number; // Index for potential animation or key usage (currently unused but included)
+    theme: string;
 }
 
 /**
@@ -40,17 +41,17 @@ interface ProjectCardProps {
  * - Accessible links with proper `target="_blank"` and `rel` safety
  * - Gradient-styled buttons and subtle border transitions
  */
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, theme }) => {
     return (
         <div
-            className="
+            className={`
                 bg-white/10 backdrop-blur-sm
                 rounded-2xl overflow-hidden
-                border border-purple-400/20 hover:border-purple-400/80
+                border border-${theme}-400/20 hover:border-${theme}-400/80
                 transition-all duration-300
                 group flex flex-col h-full
                 transform-gpu hover:shadow-lg hover:-translate-y-1
-            "
+            `}
         >
             {/* Image Section with Hover Overlay */}
             <div className="relative overflow-hidden">
@@ -63,12 +64,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                     />
                     {/* Gradient overlay that fades on hover */}
                     <div
-                        className="
+                        className={`
                             absolute inset-0
-                            bg-gradient-to-br from-purple-400/20 to-purple-600/20
+                            bg-gradient-to-br from-${theme}-400/20 to-${theme}-600/20
                             opacity-60 group-hover:opacity-20
                             transition-opacity duration-300
-                        "
+                        `}
                     ></div>
                 </div>
             </div>
@@ -77,12 +78,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             <div className="p-6 flex flex-col flex-grow">
                 {/* Title */}
                 <h3
-                    className="
+                    className={`
                         text-lg font-semibold mb-3
                         text-slate-900 dark:text-slate-100
-                        group-hover:text-purple-400 dark:group-hover:text-purple-200
+                        group-hover:text-${theme}-400 dark:group-hover:text-${theme}-200
                         transition-colors duration-300
-                    "
+                    `}
                 >
                     {project.title}
                 </h3>
@@ -103,15 +104,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                     {project.topics.map((topic) => (
                         <span
                             key={topic}
-                            className="
+                            className={`
                                 px-3 py-1
-                                bg-purple-200 hover:bg-purple-300
-                                text-purple-900
-                                border border-purple-200
+                                bg-${theme}-200 hover:bg-${theme}-300
+                                text-${theme}-900
+                                border border-${theme}-200
                                 text-xs rounded-full font-medium
                                 transition-colors duration-200
                                 cursor-default
-                            "
+                            `}
                         >
                             {topic}
                         </span>
@@ -125,18 +126,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                         href={project.liveURL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="
+                        className={`
                             flex-1
                             text-white dark:text-slate-800
-                            bg-gradient-to-r from-purple-400 to-purple-600
-                            dark:from-purple-300 dark:to-purple-400
+                            bg-gradient-to-r from-${theme}-400 to-${theme}-600
+                            dark:from-${theme}-200 dark:to-${theme}-300
                             hover:text-slate-100 dark:hover:text-slate-900
                             hover:shadow-lg
                             text-center py-2 px-4 rounded-lg
                             text-sm font-medium
                             transition-all duration-300
                             transform transform-gpu hover:scale-[1.01]
-                        "
+                        `}
                     >
                         Live Demo
                     </a>
@@ -146,13 +147,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                         href={project.githubURL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="
-                            text-slate-500 hover:text-purple-400
-                            dark:text-slate-100 dark:hover:text-purple-200
+                        className={`
+                            text-slate-500 hover:text-${theme}-400
+                            dark:text-slate-100 dark:hover:text-${theme}-200
                             transition-all duration-300
                             transform transform-gpu hover:scale-[1.1]
                             p-2 rounded-lg hover:bg-gray-500/5
-                        "
+                        `}
                         aria-label={`View ${project.title} on GitHub`}
                     >
                         <Github className="w-5 h-5" />
