@@ -14,7 +14,11 @@ import ProjectCard from './ui/ProjectCard';
  * - Section-level gradient background (light/dark mode compatible)
  * - Semantic HTML with accessible structure
  */
-const Projects = () => {
+interface ProjectsProps {
+    theme: string;
+}
+
+const Projects: React.FC<ProjectsProps> = ({ theme }) => {
     // Project data: List of projects to display in cards
     // Each project includes:
     // - imageURL: Local path to preview image (WebP for performance)
@@ -94,17 +98,17 @@ const Projects = () => {
     return (
         <section
             id="projects"
-            className="
+            className={`
                 py-20 px-4
                 bg-gradient-to-bl 
-                from-slate-50 via-purple-100/50 to-slate-100
-                dark:from-slate-900 dark:via-purple-950 dark:to-slate-900
-            "
+                from-slate-50 via-${theme}-100/50 to-slate-100
+                dark:from-slate-900 dark:via-${theme}-950 dark:to-slate-900
+            `}
             aria-labelledby="projects-title"
         >
             <div className="max-w-6xl mx-auto">
                 {/* Section Header */}
-                <SectionTitle text="Projects" theme="purple" />
+                <SectionTitle text="Projects" theme={theme} />
 
                 {/* Grid Layout for Project Cards */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

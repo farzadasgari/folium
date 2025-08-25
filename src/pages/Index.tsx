@@ -37,7 +37,7 @@ const Index = () => {
             <Hero theme={theme} />
             <About theme={theme} />
             <Skills theme={theme} />
-            <Projects />
+            <Projects theme={theme} />
             <Contact theme={theme} />
             <Footer theme={theme} />
 
