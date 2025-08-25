@@ -104,7 +104,7 @@ const Projects = () => {
         >
             <div className="max-w-6xl mx-auto">
                 {/* Section Header */}
-                <SectionTitle text="Projects" />
+                <SectionTitle text="Projects" theme="purple" />
 
                 {/* Grid Layout for Project Cards */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

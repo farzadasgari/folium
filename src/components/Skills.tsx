@@ -65,7 +65,7 @@ const Skills: React.FC<SkillsProps> = ({ theme }) => {
         >
             <div className="max-w-6xl mx-auto">
                 {/* Section title centered above the skills grid */}
-                <SectionTitle text="Skills & Expertise" />
+                <SectionTitle text="Skills & Expertise" theme={theme} />
 
                 {/* Grid layout: 1 column on mobile, 3 on desktop */}
                 <div className="grid md:grid-cols-3 gap-8">

@@ -39,7 +39,7 @@ const About: React.FC<AboutProps> = ({ theme }) => {
         >
             <div className="max-w-6xl mx-auto">
                 {/* Section Title */}
-                <SectionTitle text="About Me" />
+                <SectionTitle text="About Me" theme={theme} />
 
                 {/* Two-column layout (stacks on mobile) */}
                 <div className="grid md:grid-cols-2 gap-12 items-center">

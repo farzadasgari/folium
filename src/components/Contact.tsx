@@ -94,7 +94,7 @@ const Contact: React.FC<ContactProps> = ({ theme }) => {
         >
             <div className="max-w-6xl mx-auto">
                 {/* Section Title */}
-                <SectionTitle text="Get in Touch" />
+                <SectionTitle text="Get in Touch" theme={theme} />
 
                 {/* Two-column layout: Social Links & Contact Form */}
                 <div className="grid md:grid-cols-2 gap-12">

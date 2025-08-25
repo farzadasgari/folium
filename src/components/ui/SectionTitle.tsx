@@ -7,6 +7,7 @@ import React from 'react';
  */
 interface SectionTitleProps {
     text: string;
+    theme: string;
 }
 
 /**
@@ -20,32 +21,32 @@ interface SectionTitleProps {
  *
  * Used to introduce major sections of the page with visual emphasis.
  */
-const SectionTitle: React.FC<SectionTitleProps> = ({ text }) => {
+const SectionTitle: React.FC<SectionTitleProps> = ({ text, theme }) => {
     return (
         <div className="text-center mb-16">
             {/* Gradient Text Heading */}
             <h2
-                className="
+                className={`
                     text-4xl md:text-5xl
                     mb-4 p-2
                     font-bold
-                    bg-gradient-to-r from-purple-400 to-purple-600
-                    dark:from-purple-200 dark:to-purple-400
+                    bg-gradient-to-r from-${theme}-400 to-${theme}-600
+                    dark:from-${theme}-200 dark:to-${theme}-300
                     bg-clip-text
                     text-transparent
-                "
+                `}
             >
                 {text}
             </h2>
 
             {/* Decorative Gradient Line Underline */}
             <div
-                className="
+                className={`
                     w-24 h-1
-                    bg-gradient-to-r from-purple-400 to-purple-600
+                    bg-gradient-to-r from-${theme}-400 to-${theme}-600
                     rounded-full
                     mx-auto
-                "
+                `}
             ></div>
         </div>
     );
