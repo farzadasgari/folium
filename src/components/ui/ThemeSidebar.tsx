@@ -166,10 +166,9 @@ const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
                                 <button
                                     key={index}
                                     className="w-full p-2 rounded-lg text-left transition-all duration-300 
-                                        transform transform-gpu hover:scale-[1.1] text-slate-700 hover:bg-slate-100 
-                                        dark:text-slate-200 dark:hover:bg-slate-800 cursor-pointer"
+                                        transform transform-gpu hover:scale-[1.1] text-slate-700 hover:bg-slate-200 
+                                        dark:text-slate-200 dark:hover:bg-slate-900 cursor-pointer"
                                     aria-label={`Switch to ${lang.name}`}
-                                    // Note: Language switching is UI-only; no i18n integration
                                 >
                                     <span className="text-sm">{lang.name}</span>
                                 </button>
