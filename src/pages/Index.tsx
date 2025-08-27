@@ -39,7 +39,7 @@ const Index = () => {
                 darkMode={darkMode}
                 toggleTheme={toggleTheme}
             />
-            <Hero theme={theme} />
+            <Hero theme={theme} lang={lang} />
             <About theme={theme} />
             <Skills theme={theme} />
             <Projects theme={theme} />

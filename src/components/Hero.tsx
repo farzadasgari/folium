@@ -1,5 +1,6 @@
 import { ArrowDown } from 'lucide-react';
 import React from 'react';
+import { translations, type Language } from './lib/translate';
 
 /**
  * Hero Component
@@ -17,17 +18,10 @@ import React from 'react';
 
 interface HeroProps {
     theme: string;
+    lang: Language;
 }
 
-const Hero: React.FC<HeroProps> = ({ theme }) => {
-    // List of current roles or titles to display under the name
-    const occupation = [
-        'CEO and product architect of Tesla',
-        'Founder and CEO of xAI',
-        'Founder, CEO, and chief engineer of SpaceX',
-        'President of the Musk Foundation',
-    ];
-
+const Hero: React.FC<HeroProps> = ({ theme, lang }) => {
     /**
      * Scrolls to a specific section by ID
      *
@@ -72,8 +66,7 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
                 {/* Subtitle - currently shows first occupation */}
                 <div className="mb-8">
                     <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-200">
-                        CEO and product architect of Tesla | Founder and CEO of
-                        xAI
+                        {translations[lang].hero.Subtitle}
                     </p>
                 </div>
 
@@ -82,7 +75,7 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
                     <div className="text-lg text-slate-500 dark:text-slate-300 max-w-3xl leading-relaxed">
                         {/* Two-column layout on medium screens and up */}
                         <ul className="space-y-2 md:columns-2 md:gap-4 ml-4">
-                            {occupation.map((item) => (
+                            {translations[lang].hero.occupations.map((item) => (
                                 <li className="flex items-start" key={item}>
                                     <span className="mr-2">●</span>
                                     <span>{item}</span>
@@ -101,7 +94,7 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
                     hover:shadow-lg text-white px-8 py-4 rounded-full font-bold transition-all
                     duration-300 transform-gpu hover:scale-[1.05] shadow-md`}
                     >
-                        View My Work
+                        {translations[lang].hero.work}
                     </button>
 
                     {/* Secondary Button: Get In Touch */}
@@ -111,7 +104,7 @@ const Hero: React.FC<HeroProps> = ({ theme }) => {
                     hover:bg-${theme}-400 hover:text-white px-8 py-4 rounded-full font-bold transition-all
                     duration-300 transform-gpu hover:scale-[1.05]`}
                     >
-                        Get In Touch
+                        {translations[lang].hero.touch}
                     </button>
                 </div>
             </div>
