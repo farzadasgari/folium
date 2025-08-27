@@ -79,29 +79,26 @@ const Navbar: React.FC<NavbarProps> = ({ theme, lang }) => {
 
                     {/* Desktop Navigation Menu (hidden on mobile) */}
                     <div className="hidden md:flex space-x-8">
-                        {
-                            // ['home', 'about', 'skills', 'projects', 'contact'].map(
-                            translations[lang].navbar.navlinks.map((item) => (
-                                <button
-                                    key={item}
-                                    onClick={() => scrollToSection(item)}
-                                    className={`capitalize
+                        {translations[lang].navbar.navlinks.map((item) => (
+                            <button
+                                key={item}
+                                onClick={() => scrollToSection(item)}
+                                className={`capitalize
                                     text-slate-800 dark:text-slate-200
                                     hover:text-${theme}-400 dark:hover:text-${theme}-300
                                     transition-all duration-300 cursor-pointer font-medium 
                                     relative group`}
-                                    aria-label={`Go to ${item} section`}
-                                >
-                                    {item}
-                                    {/* Underline animation on hover */}
-                                    <span
-                                        className={`absolute -bottom-1 left-0 w-0 h-0.5 
+                                aria-label={`Go to ${item} section`}
+                            >
+                                {item}
+                                {/* Underline animation on hover */}
+                                <span
+                                    className={`absolute -bottom-1 left-0 w-0 h-0.5 
                                     group-hover:bg-${theme}-400 dark:group-hover:bg-${theme}-300
                                     group-hover:w-full transition-all duration-300`}
-                                    ></span>
-                                </button>
-                            ))
-                        }
+                                ></span>
+                            </button>
+                        ))}
                     </div>
 
                     {/* Mobile Menu Toggle Button */}
@@ -128,13 +125,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, lang }) => {
                         rounded-lg mt-2 border border-slate-400/30 backdrop-blur-md"
                     >
                         <div className="flex flex-col space-y-4 px-4">
-                            {[
-                                'home',
-                                'about',
-                                'skills',
-                                'projects',
-                                'contact',
-                            ].map((item) => (
+                            {translations[lang].navbar.navlinks.map((item) => (
                                 <button
                                     key={item}
                                     onClick={() => scrollToSection(item)}
