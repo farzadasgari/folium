@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-
+import { translations, type Language } from './lib/translate';
 /**
  * Navbar Component
  *
@@ -15,9 +15,10 @@ import { Menu, X } from 'lucide-react';
 
 interface NavbarProps {
     theme: string;
+    lang: Language;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ theme }) => {
+const Navbar: React.FC<NavbarProps> = ({ theme, lang }) => {
     // State to manage mobile menu visibility
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -78,8 +79,9 @@ const Navbar: React.FC<NavbarProps> = ({ theme }) => {
 
                     {/* Desktop Navigation Menu (hidden on mobile) */}
                     <div className="hidden md:flex space-x-8">
-                        {['home', 'about', 'skills', 'projects', 'contact'].map(
-                            (item) => (
+                        {
+                            // ['home', 'about', 'skills', 'projects', 'contact'].map(
+                            translations[lang].navbar.navlinks.map((item) => (
                                 <button
                                     key={item}
                                     onClick={() => scrollToSection(item)}
@@ -98,8 +100,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme }) => {
                                     group-hover:w-full transition-all duration-300`}
                                     ></span>
                                 </button>
-                            )
-                        )}
+                            ))
+                        }
                     </div>
 
                     {/* Mobile Menu Toggle Button */}

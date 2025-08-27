@@ -30,7 +30,7 @@ const Index = () => {
 
     return (
         <div className="min-h-screen transition-all duration-500 bg-gradient-to-br">
-            <Navbar theme={theme} />
+            <Navbar theme={theme} lang={lang} />
             <ThemeSidebar
                 lang={lang}
                 setLang={setLang}
