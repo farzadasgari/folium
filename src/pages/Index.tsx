@@ -7,13 +7,14 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ThemeSidebar from '../components/ui/ThemeSidebar';
+import { type Language } from '../components/lib/translate';
 
 const Index = () => {
     const [darkMode, setDarkMode] = useState(false);
 
     const [theme, setTheme] = useState('purple');
 
-    const [lang, setLang] = useState('en');
+    const [lang, setLang] = useState<Language>('en');
 
     useEffect(() => {
         if (darkMode) {
