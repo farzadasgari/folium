@@ -168,16 +168,23 @@ const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
                             {translations[lang].sidebar.langs}
                         </h3>
                         <div className="space-y-2">
-                            {languages.map((lang, index) => (
+                            {languages.map((l, index) => (
                                 <button
                                     key={index}
-                                    onClick={() => setLang(lang.id as Language)}
-                                    className="w-full p-2 rounded-lg text-left transition-all duration-300 
+                                    onClick={() => setLang(l.id as Language)}
+                                    className={`w-full p-2 border-2 rounded-lg text-left transition-all duration-300 
                                         transform transform-gpu hover:scale-[1.1] text-slate-700 hover:bg-slate-200 
-                                        dark:text-slate-200 dark:hover:bg-slate-900 cursor-pointer"
-                                    aria-label={`Switch to ${lang.name}`}
+                                        dark:text-slate-200 dark:hover:bg-slate-900 cursor-pointer
+                                        ${
+                                            l.id === lang
+                                                ? 'border-current shadow-md'
+                                                : 'border-transparent hover:border-slate-300'
+                                        }
+                                        
+                                        `}
+                                    aria-label={`Switch to ${l.name}`}
                                 >
-                                    <span className="text-sm">{lang.name}</span>
+                                    <span className="text-sm">{l.name}</span>
                                 </button>
                             ))}
                         </div>
