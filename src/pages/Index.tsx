@@ -13,6 +13,8 @@ const Index = () => {
 
     const [theme, setTheme] = useState('purple');
 
+    const [lang, setLang] = useState('en');
+
     useEffect(() => {
         if (darkMode) {
             document.documentElement.classList.add('dark');
@@ -29,6 +31,8 @@ const Index = () => {
         <div className="min-h-screen transition-all duration-500 bg-gradient-to-br">
             <Navbar theme={theme} />
             <ThemeSidebar
+                lang={lang}
+                setLang={setLang}
                 theme={theme}
                 setTheme={setTheme}
                 darkMode={darkMode}

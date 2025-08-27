@@ -27,6 +27,8 @@ import React, { useState } from 'react';
  */
 
 interface ThemeSidebarProps {
+    lang: string;
+    setLang: (lang: string) => void;
     theme: string;
     setTheme: (theme: string) => void;
     darkMode: boolean;
@@ -34,6 +36,8 @@ interface ThemeSidebarProps {
 }
 
 const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
+    lang,
+    setLang,
     theme,
     setTheme,
     darkMode,
@@ -56,13 +60,14 @@ const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
 
     // Supported languages (UI placeholder – no actual i18n logic implemented)
     const languages = [
-        { id: 'en', country: 'US', name: 'English' },
-        { id: 'ja', country: 'JP', name: '日本語' },
-        { id: 'fr', country: 'FR', name: 'Français' },
-        { id: 'de', country: 'DE', name: 'Deutsch' },
-        { id: 'zh', country: 'CN', name: '中文' },
-        { id: 'es', country: 'ES', name: 'Español' },
-        { id: 'kr', country: 'KR', name: '한국인' },
+        { id: 'en', name: 'English' },
+        { id: 'ja', name: '日本語' },
+        { id: 'fr', name: 'Français' },
+        { id: 'de', name: 'Deutsch' },
+        { id: 'zh', name: '中文' },
+        { id: 'es', name: 'Español' },
+        { id: 'kr', name: '한국인' },
+        { id: 'it', name: 'Italiano' },
     ];
 
     return (
@@ -84,23 +89,22 @@ const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
                 <div
                     className={` bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-l-2xl shadow-2xl 
                         transition-all duration-300 border p-4 md:p-6 w-80 max-h-[90vh] overflow-y-auto
-                ${
-                    theme === 'red'
-                        ? 'border-red-400/30 hover:border-red-400/70  dark:border-red-200/50 dark:hover:border-red-200/90'
-                        : theme === 'green'
-                          ? 'border-emerald-400/30 hover:border-emerald-400/70  dark:border-emerald-200/50 dark:hover:border-emerald-200/90'
-                          : theme === 'blue'
-                            ? 'border-blue-400/30 hover:border-blue-400/70  dark:border-blue-200/50 dark:hover:border-blue-200/90'
-                            : theme === 'pink'
-                              ? 'border-pink-400/30 hover:border-pink-400/70  dark:border-pink-200/50 dark:hover:border-pink-200/90'
-                              : theme === 'cyan'
-                                ? 'border-cyan-400/30 hover:border-cyan-400/70  dark:border-cyan-200/50 dark:hover:border-cyan-200/90'
-                                : theme === 'yellow'
-                                  ? 'border-yellow-400/30 hover:border-yellow-400/70  dark:border-yellow-200/50 dark:hover:border-yellow-200/90'
-                                  : theme === 'rose'
-                                    ? 'border-rose-400/30 hover:border-rose-400/70  dark:border-rose-200/50 dark:hover:border-rose-200/90'
-                                    : 'border-purple-400/30 hover:border-purple-400/70  dark:border-purple-200/50 dark:hover:border-purple-200/90'
-                }     
+                ${theme === 'red'
+                            ? 'border-red-400/30 hover:border-red-400/70  dark:border-red-200/50 dark:hover:border-red-200/90'
+                            : theme === 'green'
+                                ? 'border-emerald-400/30 hover:border-emerald-400/70  dark:border-emerald-200/50 dark:hover:border-emerald-200/90'
+                                : theme === 'blue'
+                                    ? 'border-blue-400/30 hover:border-blue-400/70  dark:border-blue-200/50 dark:hover:border-blue-200/90'
+                                    : theme === 'pink'
+                                        ? 'border-pink-400/30 hover:border-pink-400/70  dark:border-pink-200/50 dark:hover:border-pink-200/90'
+                                        : theme === 'cyan'
+                                            ? 'border-cyan-400/30 hover:border-cyan-400/70  dark:border-cyan-200/50 dark:hover:border-cyan-200/90'
+                                            : theme === 'yellow'
+                                                ? 'border-yellow-400/30 hover:border-yellow-400/70  dark:border-yellow-200/50 dark:hover:border-yellow-200/90'
+                                                : theme === 'rose'
+                                                    ? 'border-rose-400/30 hover:border-rose-400/70  dark:border-rose-200/50 dark:hover:border-rose-200/90'
+                                                    : 'border-purple-400/30 hover:border-purple-400/70  dark:border-purple-200/50 dark:hover:border-purple-200/90'
+                        }     
                         `}
                     data-sidebar
                     aria-label="Theme and Language Settings"
@@ -139,10 +143,9 @@ const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
                                     className={`p-2 md:p-3 rounded-lg border-2 transition-all duration-300 
                                         transform transform-gpu text-slate-700 dark:text-slate-200 
                                          cursor-pointer
-                                        ${
-                                            t.id === theme
-                                                ? 'border-current shadow-md scale-[1.1]'
-                                                : 'border-transparent hover:border-slate-300 hover:scale-[1.1]'
+                                        ${t.id === theme
+                                            ? 'border-current shadow-md scale-[1.1]'
+                                            : 'border-transparent hover:border-slate-300 hover:scale-[1.1]'
                                         }
                                         `}
                                 >
@@ -165,6 +168,7 @@ const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
                             {languages.map((lang, index) => (
                                 <button
                                     key={index}
+                                    onClick={() => setLang(lang.id)}
                                     className="w-full p-2 rounded-lg text-left transition-all duration-300 
                                         transform transform-gpu hover:scale-[1.1] text-slate-700 hover:bg-slate-200 
                                         dark:text-slate-200 dark:hover:bg-slate-900 cursor-pointer"
@@ -185,22 +189,21 @@ const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
                 className={`fixed top-1/2 -translate-y-1/2 z-50 p-2 md:p-3 transition-all duration-300 
                     shadow-lg hover:shadow-xl text-white rounded-l-xl border-0 outline-none cursor-pointer
                     ${isOpen ? 'right-80' : 'right-0'}
-                    ${
-                        theme === 'red'
-                            ? 'bg-red-900 hover:bg-red-700 dark:bg-red-400 dark:hover:bg-red-600'
-                            : theme === 'emerald'
-                              ? 'bg-emerald-900 hover:bg-emerald-700 dark:bg-emerald-400 dark:hover:bg-emerald-600'
-                              : theme === 'blue'
+                    ${theme === 'red'
+                        ? 'bg-red-900 hover:bg-red-700 dark:bg-red-400 dark:hover:bg-red-600'
+                        : theme === 'emerald'
+                            ? 'bg-emerald-900 hover:bg-emerald-700 dark:bg-emerald-400 dark:hover:bg-emerald-600'
+                            : theme === 'blue'
                                 ? 'bg-blue-900 hover:bg-blue-700 dark:bg-blue-400 dark:hover:bg-blue-600'
                                 : theme === 'pink'
-                                  ? 'bg-pink-900 hover:bg-pink-700 dark:bg-pink-400 dark:hover:bg-pink-600'
-                                  : theme === 'cyan'
-                                    ? 'bg-cyan-900 hover:bg-cyan-700 dark:bg-cyan-400 dark:hover:bg-cyan-600'
-                                    : theme === 'yellow'
-                                      ? 'bg-yellow-900 hover:bg-yellow-700 dark:bg-yellow-400 dark:hover:bg-yellow-600'
-                                      : theme === 'rose'
-                                        ? 'bg-rose-900 hover:bg-rose-700 dark:bg-rose-400 dark:hover:bg-rose-600'
-                                        : 'bg-purple-900 hover:bg-purple-700 dark:bg-purple-400 dark:hover:bg-purple-600'
+                                    ? 'bg-pink-900 hover:bg-pink-700 dark:bg-pink-400 dark:hover:bg-pink-600'
+                                    : theme === 'cyan'
+                                        ? 'bg-cyan-900 hover:bg-cyan-700 dark:bg-cyan-400 dark:hover:bg-cyan-600'
+                                        : theme === 'yellow'
+                                            ? 'bg-yellow-900 hover:bg-yellow-700 dark:bg-yellow-400 dark:hover:bg-yellow-600'
+                                            : theme === 'rose'
+                                                ? 'bg-rose-900 hover:bg-rose-700 dark:bg-rose-400 dark:hover:bg-rose-600'
+                                                : 'bg-purple-900 hover:bg-purple-700 dark:bg-purple-400 dark:hover:bg-purple-600'
                     }
                     `}
             >
