@@ -72,7 +72,7 @@ const Hero: React.FC<HeroProps> = ({ theme, lang }) => {
 
                 {/* Detailed list of occupations */}
                 <div className="mb-12">
-                    <div className="text-lg text-slate-500 dark:text-slate-300 max-w-3xl leading-relaxed">
+                    <div className="text-lg text-slate-500 dark:text-slate-300 max-w-5xl leading-relaxed">
                         {/* Two-column layout on medium screens and up */}
                         <ul className="space-y-2 md:columns-2 md:gap-4 ml-4">
                             {translations[lang].hero.occupations.map((item) => (
