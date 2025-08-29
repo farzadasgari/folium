@@ -1,5 +1,6 @@
 import { Code } from 'lucide-react';
 import SectionTitle from './ui/SectionTitle';
+import { translations, type Language } from './lib/translate';
 
 /**
  * Skills Component
@@ -16,9 +17,10 @@ import SectionTitle from './ui/SectionTitle';
 
 interface SkillsProps {
     theme: string;
+    lang: Language;
 }
 
-const Skills: React.FC<SkillsProps> = ({ theme }) => {
+const Skills: React.FC<SkillsProps> = ({ theme, lang }) => {
     // Array of skill categories
     // Each category has:
     // - title: Name of the category (e.g., "Front-End")
@@ -65,7 +67,10 @@ const Skills: React.FC<SkillsProps> = ({ theme }) => {
         >
             <div className="max-w-6xl mx-auto">
                 {/* Section title centered above the skills grid */}
-                <SectionTitle text="Skills & Expertise" theme={theme} />
+                <SectionTitle
+                    text={translations[lang].titles.skills}
+                    theme={theme}
+                />
 
                 {/* Grid layout: 1 column on mobile, 3 on desktop */}
                 <div className="grid md:grid-cols-3 gap-8">

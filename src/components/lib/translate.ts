@@ -37,6 +37,16 @@ export const translations = {
                 'API Development & Integration',
             ],
         },
+        contact: {
+            conncet: "Let's Connect!",
+            name: 'Name',
+            yname: 'Your Name',
+            email: 'Email',
+            message: 'Message',
+            ymessage: 'Tell Me About Your Project...',
+            send: 'Send Message',
+            success: 'Thank You! Your message has been sent successfully!',
+        },
     },
     ja: {
         sidebar: {
@@ -80,6 +90,16 @@ export const translations = {
                 'モダンJavaScriptフレームワーク',
                 'API開発と統合',
             ],
+        },
+        contact: {
+            conncet: 'つながりましょう！',
+            name: '名前',
+            yname: 'あなたの名前',
+            email: 'メールアドレス',
+            message: 'メッセージ',
+            ymessage: 'プロジェクトについて教えてください...',
+            send: 'メッセージを送信',
+            success: 'ありがとうございます！メッセージが正常に送信されました！',
         },
     },
     fr: {
@@ -126,6 +146,16 @@ export const translations = {
                 "Développement et Intégration d'API",
             ],
         },
+        contact: {
+            conncet: 'Connectons-nous !',
+            name: 'Nom',
+            yname: 'Votre nom',
+            email: 'Adresse e-mail',
+            message: 'Message',
+            ymessage: 'Parlez-moi de votre projet...',
+            send: 'Envoyer le message',
+            success: 'Merci ! Votre message a été envoyé avec succès !',
+        },
     },
     de: {
         sidebar: {
@@ -171,6 +201,16 @@ export const translations = {
                 'API-Entwicklung und -Integration',
             ],
         },
+        contact: {
+            conncet: 'Lass uns Kontakt aufnehmen!',
+            name: 'Name',
+            yname: 'Ihr Name',
+            email: 'E-Mail',
+            message: 'Nachricht',
+            ymessage: 'Erzählen Sie mir von Ihrem Projekt...',
+            send: 'Nachricht senden',
+            success: 'Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet!',
+        },
     },
     zh: {
         sidebar: {
@@ -208,6 +248,16 @@ export const translations = {
                 '现代JavaScript框架',
                 'API开发与集成',
             ],
+        },
+        contact: {
+            conncet: '让我们联系吧！',
+            name: '姓名',
+            yname: '您的姓名',
+            email: '电子邮箱',
+            message: '留言',
+            ymessage: '告诉我您的项目详情...',
+            send: '发送消息',
+            success: '谢谢！您的消息已成功发送！',
         },
     },
     es: {
@@ -254,6 +304,16 @@ export const translations = {
                 'Desarrollo e Integración de API',
             ],
         },
+        contact: {
+            conncet: '¡Conectemos!',
+            name: 'Nombre',
+            yname: 'Tu nombre',
+            email: 'Correo electrónico',
+            message: 'Mensaje',
+            ymessage: 'Cuéntame sobre tu proyecto...',
+            send: 'Enviar mensaje',
+            success: '¡Gracias! Tu mensaje ha sido enviado con éxito.',
+        },
     },
     kr: {
         sidebar: {
@@ -291,6 +351,16 @@ export const translations = {
                 '최신 자바스크립트 프레임워크',
                 'API 개발 및 통합',
             ],
+        },
+        contact: {
+            conncet: '연락하기!',
+            name: '이름',
+            yname: '당신의 이름',
+            email: '이메일',
+            message: '메시지',
+            ymessage: '프로젝트에 대해 알려주세요...',
+            send: '메시지 보내기',
+            success: '감사합니다! 메시지가 성공적으로 전송되었습니다!',
         },
     },
     it: {
@@ -336,6 +406,16 @@ export const translations = {
                 'Framework JavaScript Moderni',
                 'Sviluppo e Integrazione API',
             ],
+        },
+        contact: {
+            conncet: 'Mettiamoci in contatto!',
+            name: 'Nome',
+            yname: 'Il tuo nome',
+            email: 'Email',
+            message: 'Messaggio',
+            ymessage: 'Parlami del tuo progetto...',
+            send: 'Invia messaggio',
+            success: 'Grazie! Il tuo messaggio è stato inviato con successo!',
         },
     },
 } as const;

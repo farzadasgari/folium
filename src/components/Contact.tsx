@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
 import SectionTitle from './ui/SectionTitle';
+import { translations, type Language } from './lib/translate';
 
 /**
  * Contact Component
@@ -18,9 +19,10 @@ import SectionTitle from './ui/SectionTitle';
 
 interface ContactProps {
     theme: string;
+    lang: Language;
 }
 
-const Contact: React.FC<ContactProps> = ({ theme }) => {
+const Contact: React.FC<ContactProps> = ({ theme, lang }) => {
     // Social media and contact links
     // Each link includes:
     // - URL: The destination (mailto or https)
@@ -94,14 +96,17 @@ const Contact: React.FC<ContactProps> = ({ theme }) => {
         >
             <div className="max-w-6xl mx-auto">
                 {/* Section Title */}
-                <SectionTitle text="Get in Touch" theme={theme} />
+                <SectionTitle
+                    text={translations[lang].titles.touch}
+                    theme={theme}
+                />
 
                 {/* Two-column layout: Social Links & Contact Form */}
                 <div className="grid md:grid-cols-2 gap-12">
                     {/* Left Column: Social Contact Links */}
                     <div>
                         <h3 className="text-2xl font-semibold mb-8 dark:text-slate-100">
-                            Let's Connect!
+                            {translations[lang].contact.conncet}
                         </h3>
                         <div className="space-y-6">
                             {socials.map((social) => {
@@ -138,7 +143,7 @@ const Contact: React.FC<ContactProps> = ({ theme }) => {
                                     htmlFor="name"
                                     className="block text-sm font-medium mb-2 dark:text-slate-200"
                                 >
-                                    Name
+                                    {translations[lang].contact.name}
                                 </label>
                                 <input
                                     type="text"
@@ -147,7 +152,9 @@ const Contact: React.FC<ContactProps> = ({ theme }) => {
                                     value={formData.name}
                                     onChange={handleInputChange}
                                     required
-                                    placeholder="Your Name"
+                                    placeholder={
+                                        translations[lang].contact.yname
+                                    }
                                     className={`w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-${theme}-400 focus:ring-${theme}-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 dark:text-slate-200 placeholder:text-slate-400/90 dark:placeholder:text-slate-300/90`}
                                 />
                             </div>
@@ -158,7 +165,7 @@ const Contact: React.FC<ContactProps> = ({ theme }) => {
                                     htmlFor="email"
                                     className="block text-sm font-medium mb-2 dark:text-slate-200"
                                 >
-                                    Email
+                                    {translations[lang].contact.email}
                                 </label>
                                 <input
                                     type="email"
@@ -178,7 +185,7 @@ const Contact: React.FC<ContactProps> = ({ theme }) => {
                                     htmlFor="message"
                                     className="block text-sm font-medium mb-2 dark:text-slate-200"
                                 >
-                                    Message
+                                    {translations[lang].contact.message}
                                 </label>
                                 <textarea
                                     id="message"
@@ -187,7 +194,9 @@ const Contact: React.FC<ContactProps> = ({ theme }) => {
                                     onChange={handleInputChange}
                                     required
                                     rows={5}
-                                    placeholder="Tell Me About Your Project..."
+                                    placeholder={
+                                        translations[lang].contact.ymessage
+                                    }
                                     className={`w-full px-4 py-3 bg-white/10 border-2 border-slate-300/50 rounded-lg focus:border-${theme}-400 focus:ring-${theme}-400/20 focus:outline-none focus:ring-2 transition-all duration-300 text-slate-800 dark:text-slate-200 placeholder:text-slate-400/90 dark:placeholder:text-slate-300/90`}
                                     style={{
                                         resize: 'none',
@@ -201,7 +210,7 @@ const Contact: React.FC<ContactProps> = ({ theme }) => {
                                     type="submit"
                                     className={`w-full cursor-pointer bg-gradient-to-r from-${theme}-400 to-${theme}-600 hover:from-${theme}-500 hover:to-${theme}-800 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform-gpu hover:scale-[1.01] shadow-md`}
                                 >
-                                    Send Message
+                                    {translations[lang].contact.send}
                                 </button>
                             </div>
                         </form>
@@ -226,8 +235,7 @@ const Contact: React.FC<ContactProps> = ({ theme }) => {
                                     <span className="sr-only">Check icon</span>
                                 </div>
                                 <div className="ms-3 text-sm font-normal">
-                                    Thank You! Your message has been sent
-                                    successfully!
+                                    {translations[lang].contact.success}
                                 </div>
                             </div>
                         )}
