@@ -5,6 +5,12 @@ export const translations = {
             theme: 'Color Themes',
             langs: 'Languages',
         },
+        titles: {
+            about: 'About Me',
+            skills: 'Skills & Expertise',
+            projs: 'Projects',
+            touch: 'Get in Touch',
+        },
         navbar: {
             navlinks: ['home', 'about', 'skills', 'projects', 'contact'],
         },
@@ -37,6 +43,12 @@ export const translations = {
             mode: 'テーマモード',
             theme: 'カラーテーマ',
             langs: '言語',
+        },
+        titles: {
+            about: '私について',
+            skills: 'スキルと専門知識',
+            projs: 'プロジェクト',
+            touch: 'お問い合わせ',
         },
         navbar: {
             navlinks: [
@@ -75,6 +87,12 @@ export const translations = {
             mode: 'Mode de thème',
             theme: 'Thèmes de couleur',
             langs: 'Langues',
+        },
+        titles: {
+            about: 'À Propos de Moi',
+            skills: 'Compétences et Expertise',
+            projs: 'Projets',
+            touch: 'Contactez-moi',
         },
         navbar: {
             navlinks: [
@@ -115,6 +133,12 @@ export const translations = {
             theme: 'Farbthemen',
             langs: 'Sprachen',
         },
+        titles: {
+            about: 'Über Mich',
+            skills: 'Fähigkeiten und Know-how',
+            projs: 'Projekte',
+            touch: 'Kontakt aufnehmen',
+        },
         navbar: {
             navlinks: [
                 'startseite',
@@ -154,6 +178,12 @@ export const translations = {
             theme: '颜色主题',
             langs: '语言',
         },
+        titles: {
+            about: '关于我',
+            skills: '技能与专长',
+            projs: '项目',
+            touch: '联系我',
+        },
         navbar: {
             navlinks: ['首页', '关于', '技能', '项目', '联系'],
         },
@@ -185,6 +215,12 @@ export const translations = {
             mode: 'Modo de tema',
             theme: 'Temas de color',
             langs: 'Idiomas',
+        },
+        titles: {
+            about: 'Sobre Mí',
+            skills: 'Habilidades y Experiencia',
+            projs: 'Proyectos',
+            touch: 'Ponte en Contacto',
         },
         navbar: {
             navlinks: [
@@ -225,6 +261,12 @@ export const translations = {
             theme: '색상 테마',
             langs: '언어',
         },
+        titles: {
+            about: '소개',
+            skills: '기술 및 전문 분야',
+            projs: '프로젝트',
+            touch: '연락하기',
+        },
         navbar: {
             navlinks: ['홈', '소개', '기술', '프로젝트', '연락처'],
         },
@@ -256,6 +298,12 @@ export const translations = {
             mode: 'Modalità tema',
             theme: 'Temi colore',
             langs: 'Lingue',
+        },
+        titles: {
+            about: 'Chi Sono',
+            skills: 'Competenze ed Esperienza',
+            projs: 'Progetti',
+            touch: 'Contattami',
         },
         navbar: {
             navlinks: [
