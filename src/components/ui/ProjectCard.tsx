@@ -1,5 +1,6 @@
 import { Github } from 'lucide-react';
 import React from 'react';
+import { translations, type Language } from '../lib/translate';
 
 /**
  * Interface: Project
@@ -24,6 +25,7 @@ interface ProjectCardProps {
     project: Project; // The project data to render
     index: number; // Index for potential animation or key usage (currently unused but included)
     theme: string;
+    lang: Language;
 }
 
 /**
@@ -41,7 +43,7 @@ interface ProjectCardProps {
  * - Accessible links with proper `target="_blank"` and `rel` safety
  * - Gradient-styled buttons and subtle border transitions
  */
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, theme }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, theme, lang }) => {
     return (
         <div
             className={`
@@ -139,7 +141,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, theme }) => {
                             transform transform-gpu hover:scale-[1.01]
                         `}
                     >
-                        Live Demo
+                        {translations[lang].titles.live}
                     </a>
 
                     {/* GitHub Link */}
