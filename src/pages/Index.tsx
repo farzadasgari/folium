@@ -44,7 +44,7 @@ const Index = () => {
             <Skills theme={theme} lang={lang} />
             <Projects theme={theme} />
             <Contact theme={theme} lang={lang} />
-            <Footer theme={theme} />
+            <Footer theme={theme} lang={lang} />
 
             <>
                 {() => {

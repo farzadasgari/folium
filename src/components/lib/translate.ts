@@ -47,6 +47,10 @@ export const translations = {
             send: 'Send Message',
             success: 'Thank You! Your message has been sent successfully!',
         },
+        footer: {
+            title: 'CEO and product architect of Tesla',
+            copyright: 'All rights reserved.',
+        },
     },
     ja: {
         sidebar: {
@@ -100,6 +104,10 @@ export const translations = {
             ymessage: 'プロジェクトについて教えてください...',
             send: 'メッセージを送信',
             success: 'ありがとうございます！メッセージが正常に送信されました！',
+        },
+        footer: {
+            title: 'テスラのCEO兼製品アーキテクト',
+            copyright: 'すべての権利保有。',
         },
     },
     fr: {
@@ -156,6 +164,10 @@ export const translations = {
             send: 'Envoyer le message',
             success: 'Merci ! Votre message a été envoyé avec succès !',
         },
+        footer: {
+            title: 'PDG et architecte produit de Tesla',
+            copyright: 'Tous droits réservés.',
+        },
     },
     de: {
         sidebar: {
@@ -211,6 +223,10 @@ export const translations = {
             send: 'Nachricht senden',
             success: 'Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet!',
         },
+        footer: {
+            title: 'CEO und Produktarchitekt von Tesla',
+            copyright: 'Alle Rechte vorbehalten.',
+        },
     },
     zh: {
         sidebar: {
@@ -258,6 +274,10 @@ export const translations = {
             ymessage: '告诉我您的项目详情...',
             send: '发送消息',
             success: '谢谢！您的消息已成功发送！',
+        },
+        footer: {
+            title: '特斯拉CEO兼产品架构师',
+            copyright: '版权所有。',
         },
     },
     es: {
@@ -314,6 +334,10 @@ export const translations = {
             send: 'Enviar mensaje',
             success: '¡Gracias! Tu mensaje ha sido enviado con éxito.',
         },
+        footer: {
+            title: 'CEO y arquitecto de producto de Tesla',
+            copyright: 'Todos los derechos reservados.',
+        },
     },
     kr: {
         sidebar: {
@@ -361,6 +385,10 @@ export const translations = {
             ymessage: '프로젝트에 대해 알려주세요...',
             send: '메시지 보내기',
             success: '감사합니다! 메시지가 성공적으로 전송되었습니다!',
+        },
+        footer: {
+            title: '테슬라 CEO 겸 제품 아키텍트',
+            copyright: '모든 권리 보유.',
         },
     },
     it: {
@@ -416,6 +444,10 @@ export const translations = {
             ymessage: 'Parlami del tuo progetto...',
             send: 'Invia messaggio',
             success: 'Grazie! Il tuo messaggio è stato inviato con successo!',
+        },
+        footer: {
+            title: 'CEO e architetto prodotto di Tesla',
+            copyright: 'Tutti i diritti riservati.',
         },
     },
 } as const;

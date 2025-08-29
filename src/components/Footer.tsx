@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { translations, type Language } from './lib/translate';
 
 /**
  * Footer Component
@@ -15,9 +16,10 @@ import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 
 interface FooterProps {
     theme: string;
+    lang: Language;
 }
 
-const Footer: React.FC<FooterProps> = ({ theme }) => {
+const Footer: React.FC<FooterProps> = ({ theme, lang }) => {
     // Get current year for copyright dynamically
     const currentYear = new Date().getFullYear();
 
@@ -64,7 +66,7 @@ const Footer: React.FC<FooterProps> = ({ theme }) => {
                             John Doe
                         </div>
                         <p className="text-slate-600 text-sm dark:text-slate-200">
-                            CEO and product architect of Tesla
+                            {translations[lang].footer.title}
                         </p>
                     </div>
 
@@ -92,8 +94,10 @@ const Footer: React.FC<FooterProps> = ({ theme }) => {
                 {/* Bottom Section: Copyright and Attribution */}
                 <div className="mt-8 pt-8 border-t border-black/10 dark:border-white/20 text-center">
                     <p className="text-slate-600 text-sm dark:text-slate-200">
-                        John Doe © {currentYear} All rights reserved. Made with
-                        ❤️ by
+                        John Doe © {currentYear}{' '}
+                        {translations[lang].footer.copyright}
+                        <br />
+                        Made with ❤️ by
                         <a
                             className={`ml-1 text-${theme}-400 hover:text-${theme}-600 dark:text-${theme}-200 dark:hover:text-${theme}-400 hover:underline transition-all duration-300`}
                             href="https://github.com/farzadasgari  "
