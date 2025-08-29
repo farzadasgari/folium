@@ -42,7 +42,7 @@ const Index = () => {
             <Hero theme={theme} lang={lang} />
             <About theme={theme} lang={lang} />
             <Skills theme={theme} lang={lang} />
-            <Projects theme={theme} />
+            <Projects theme={theme} lang={lang} />
             <Contact theme={theme} lang={lang} />
             <Footer theme={theme} lang={lang} />
 

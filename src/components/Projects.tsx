@@ -1,5 +1,6 @@
 import SectionTitle from './ui/SectionTitle';
 import ProjectCard from './ui/ProjectCard';
+import { translations, type Language } from './lib/translate';
 
 /**
  * Projects Component
@@ -16,9 +17,10 @@ import ProjectCard from './ui/ProjectCard';
  */
 interface ProjectsProps {
     theme: string;
+    lang: Language
 }
 
-const Projects: React.FC<ProjectsProps> = ({ theme }) => {
+const Projects: React.FC<ProjectsProps> = ({ theme, lang }) => {
     // Project data: List of projects to display in cards
     // Each project includes:
     // - imageURL: Local path to preview image (WebP for performance)
@@ -108,7 +110,7 @@ const Projects: React.FC<ProjectsProps> = ({ theme }) => {
         >
             <div className="max-w-6xl mx-auto">
                 {/* Section Header */}
-                <SectionTitle text="Projects" theme={theme} />
+                <SectionTitle text={translations[lang].titles.projs} theme={theme} />
 
                 {/* Grid Layout for Project Cards */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
