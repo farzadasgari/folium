@@ -11,7 +11,7 @@ interface Project {
     imageURL: string; // URL of the project preview image
     title: string; // Project title (e.g., "E-Commerce Dashboard")
     description: string; // Short description of the project
-    topics: string[]; // Array of tech stacks or categories (e.g., ["React", "Tailwind"])
+    topics: readonly string[]; // Array of tech stacks or categories (e.g., ["React", "Tailwind"])
     liveURL: string; // URL to the live deployment
     githubURL: string; // URL to the GitHub repository
 }
