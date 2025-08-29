@@ -1,6 +1,7 @@
 import { User, Code, Download } from 'lucide-react';
 import SectionTitle from './ui/SectionTitle';
 import React from 'react';
+import { translations, type Language } from './lib/translate';
 
 /**
  * About Component
@@ -16,17 +17,10 @@ import React from 'react';
 
 interface AboutProps {
     theme: string;
+    lang: Language;
 }
 
-const About: React.FC<AboutProps> = ({ theme }) => {
-    // List of professional skills or services the user offers
-    const iDo = [
-        'Full-Stack Web Development', // Fixed typo: 'Developement' → 'Development'
-        'Responsive UI/UX Design',
-        'Modern JavaScript Frameworks', // Pluralized for consistency
-        'API Development & Integration',
-    ];
-
+const About: React.FC<AboutProps> = ({ theme, lang }) => {
     return (
         <section
             id="about"
@@ -58,18 +52,11 @@ const About: React.FC<AboutProps> = ({ theme }) => {
                                 className={`w-8 h-8 text-${theme}-400 mr-3`}
                             />
                             <h3 className="text-2xl font-semibold dark:text-slate-100">
-                                My Story
+                                {translations[lang].about.storyTitle}
                             </h3>
                         </div>
                         <p className="text-slate-600 dark:text-slate-200 leading-relaxed mb-6">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Maiores ea, voluptatibus quidem quaerat illo,
-                            ducimus dignissimos eius dolore veniam eveniet
-                            sapiente minima corrupti aspernatur blanditiis
-                            fugiat accusamus aut optio iste!
-                            <br />
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Maiores ea, voluptatibus quidem quaerat illo.
+                            {translations[lang].about.story}
                         </p>
                     </div>
 
@@ -88,17 +75,17 @@ const About: React.FC<AboutProps> = ({ theme }) => {
                                 className={`w-8 h-8 text-${theme}-400 mr-3`}
                             />
                             <h3 className="text-2xl font-semibold dark:text-slate-100">
-                                What I Do
+                                {translations[lang].about.iDoTitle}
                             </h3>
                         </div>
 
                         {/* List of skills with bullet points */}
                         <div className="space-y-4">
-                            {iDo.map((item, index) => (
+                            {translations[lang].about.iDo.map((item, index) => (
                                 <div className="flex items-center" key={index}>
                                     <div
                                         className={`w-3 h-3 bg-${theme}-400 rounded-full mr-3`}
-                                    ></div>
+                                    />
                                     <span className="text-slate-600 dark:text-slate-200">
                                         {item}
                                     </span>

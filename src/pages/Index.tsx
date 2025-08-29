@@ -40,7 +40,7 @@ const Index = () => {
                 toggleTheme={toggleTheme}
             />
             <Hero theme={theme} lang={lang} />
-            <About theme={theme} />
+            <About theme={theme} lang={lang} />
             <Skills theme={theme} />
             <Projects theme={theme} />
             <Contact theme={theme} />
@@ -70,6 +70,7 @@ const Index = () => {
                         group-hover:text-purple-400 group-hover:text-blue-400 group-hover:text-cyan-400 group-hover:text-emerald-400 group-hover:text-pink-400 group-hover:text-red-400 group-hover:text-rose-400 group-hover:text-yellow-400
                         dark:group-hover:text-purple-200 dark:group-hover:text-blue-200 dark:group-hover:text-cyan-200 dark:group-hover:text-emerald-200 dark:group-hover:text-pink-200 dark:group-hover:text-red-200 dark:group-hover:text-rose-200 dark:group-hover:text-yellow-200
                         bg-purple-200 bg-blue-200 bg-cyan-200 bg-emerald-200 bg-pink-200 bg-red-200 bg-rose-200 bg-yellow-200
+                        bg-purple-400 bg-blue-400 bg-cyan-400 bg-emerald-400 bg-pink-400 bg-red-400 bg-rose-400 bg-yellow-400
                         hover:bg-purple-300 hover:bg-blue-300 hover:bg-cyan-300 hover:bg-emerald-300 hover:bg-pink-300 hover:bg-red-300 hover:bg-rose-300 hover:bg-yellow-300
                         hover:bg-purple-400 hover:bg-blue-400 hover:bg-cyan-400 hover:bg-emerald-400 hover:bg-pink-400 hover:bg-red-400 hover:bg-rose-400 hover:bg-yellow-400
                         group-hover:bg-purple-400 group-hover:bg-blue-400 group-hover:bg-cyan-400 group-hover:bg-emerald-400 group-hover:bg-pink-400 group-hover:bg-red-400 group-hover:bg-rose-400 group-hover:bg-yellow-400
