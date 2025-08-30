@@ -37,6 +37,7 @@ export const translations = {
                 'Modern JavaScript Frameworks',
                 'API Development & Integration',
             ],
+            download: 'Download My Resume',
         },
         projects: [
             {
@@ -168,6 +169,7 @@ export const translations = {
                 'モダンJavaScriptフレームワーク',
                 'API開発と統合',
             ],
+            download: '私の履歴書をダウンロード',
         },
         projects: [
             {
@@ -285,6 +287,7 @@ export const translations = {
                 'Frameworks JavaScript Modernes',
                 "Développement et Intégration d'API",
             ],
+            download: 'Télécharger mon CV',
         },
         projects: [
             {
@@ -417,6 +420,7 @@ export const translations = {
                 'Moderne JavaScript-Frameworks',
                 'API-Entwicklung und -Integration',
             ],
+            download: 'Mein Lebenslauf herunterladen',
         },
         projects: [
             {
@@ -542,6 +546,7 @@ export const translations = {
                 '现代JavaScript框架',
                 'API开发与集成',
             ],
+            download: '下载我的简历',
         },
         projects: [
             {
@@ -654,6 +659,7 @@ export const translations = {
                 'Frameworks Modernos de JavaScript',
                 'Desarrollo e Integración de API',
             ],
+            download: 'Descargar mi currículum',
         },
         projects: [
             {
@@ -779,6 +785,7 @@ export const translations = {
                 '최신 자바스크립트 프레임워크',
                 'API 개발 및 통합',
             ],
+            download: '내 이력서 다운로드',
         },
         projects: [
             {
@@ -896,6 +903,7 @@ export const translations = {
                 'Framework JavaScript Moderni',
                 'Sviluppo e Integrazione API',
             ],
+            download: 'Scarica il mio curriculum',
         },
         projects: [
             {

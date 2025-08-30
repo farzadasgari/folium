@@ -114,7 +114,7 @@ const About: React.FC<AboutProps> = ({ theme, lang }) => {
                                 `}
                                 >
                                     <Download className="h-4 w-4 mr-3" />
-                                    Download Resume
+                                    {translations[lang].about.download}
                                 </div>
                             </a>
                         </div>
