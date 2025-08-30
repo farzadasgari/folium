@@ -36,7 +36,7 @@ const Hero: React.FC<HeroProps> = ({ theme, lang }) => {
 
     return (
         <section
-            id="home"
+            id={translations[lang].navbar.navlinks[0]}
             className={`min-h-screen flex items-center justify-center
         relative overflow-hidden w-full bg-gradient-to-bl from-slate-50 via-${theme}-100/50 to-slate-100 dark:from-slate-900 dark:via-${theme}-950 dark:to-slate-900`}
         >

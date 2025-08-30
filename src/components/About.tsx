@@ -23,7 +23,7 @@ interface AboutProps {
 const About: React.FC<AboutProps> = ({ theme, lang }) => {
     return (
         <section
-            id="about"
+            id={translations[lang].navbar.navlinks[1]}
             className={`
                 py-20 px-4
                 bg-gradient-to-bl 

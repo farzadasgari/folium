@@ -91,7 +91,7 @@ const Contact: React.FC<ContactProps> = ({ theme, lang }) => {
 
     return (
         <section
-            id="contact"
+            id={translations[lang].navbar.navlinks[4]}
             className={`py-20 px-4 bg-gradient-to-bl from-slate-50 via-${theme}-100/50 to-slate-100 dark:from-slate-900 dark:via-${theme}-950 dark:to-slate-900`}
         >
             <div className="max-w-6xl mx-auto">

@@ -62,7 +62,7 @@ const Skills: React.FC<SkillsProps> = ({ theme, lang }) => {
 
     return (
         <section
-            id="skills"
+            id={translations[lang].navbar.navlinks[2]}
             className={`py-20 px-4 bg-gradient-to-bl from-slate-50 via-${theme}-100/50 to-slate-100 dark:from-slate-900 dark:via-${theme}-950 dark:to-slate-900`}
         >
             <div className="max-w-6xl mx-auto">
