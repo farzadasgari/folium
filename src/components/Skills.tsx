@@ -13,6 +13,10 @@ import { translations, type Language } from './lib/translate';
  * - Three-column grid layout on desktop (stacks on mobile)
  * - Each category (Front-End, Back-End, Tools) in a glassmorphic card
  * - Progress bars reflect skill level from 0–100%
+ *
+ * Note: Skill data is currently hardcoded in English.
+ * For full internationalization support, consider moving this to the translation file.
+ * The progress bar visualizes proficiency but is not interactive.
  */
 
 interface SkillsProps {
@@ -27,6 +31,7 @@ const Skills: React.FC<SkillsProps> = ({ theme, lang }) => {
     // - skills: Array of individual skills with:
     //   - name: Skill or technology (e.g., "React")
     //   - level: Proficiency percentage (0–100), used for progress bar width
+    // WARNING: These values are static and not translated. In production, this data should come from the translation system.
     const SkillCategory = [
         {
             title: 'Front-End',

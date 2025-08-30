@@ -6,13 +6,18 @@ import { translations, type Language } from './lib/translate';
 /**
  * About Component
  *
- * A two-column section that introduces the user with:
- * - A personal story (left column)
- * - A list of skills/services offered (right column)
- * - A "Download Resume" link with icon
+ * A two-column section introducing the user:
+ * - Left: personal story
+ * - Right: skills/services + resume download link
  *
- * Styled with glassmorphism, gradient backgrounds, and smooth hover effects.
- * Responsive layout using Tailwind’s grid system.
+ * Features:
+ * - Glassmorphism styling (blur, transparency, subtle borders)
+ * - Gradient background adapting to `theme` + dark mode
+ * - Responsive layout with Tailwind’s grid utilities
+ *
+ * Props:
+ * - theme: a string that controls Tailwind color utility classes
+ * - lang: current language code, passed to `translations`
  */
 
 interface AboutProps {
@@ -32,15 +37,15 @@ const About: React.FC<AboutProps> = ({ theme, lang }) => {
             `}
         >
             <div className="max-w-6xl mx-auto">
-                {/* Section Title */}
+                {/* Section Header */}
                 <SectionTitle
                     text={translations[lang].titles.about}
                     theme={theme}
                 />
 
-                {/* Two-column layout (stacks on mobile) */}
+                {/* Responsive two-column layout */}
                 <div className="grid md:grid-cols-2 gap-12 items-center">
-                    {/* Left Column: Personal Story */}
+                    {/* === Left Column: Personal Story === */}
                     <div
                         className={`
                             bg-white/5 backdrop-blur-sm
@@ -63,7 +68,7 @@ const About: React.FC<AboutProps> = ({ theme, lang }) => {
                         </p>
                     </div>
 
-                    {/* Right Column: Skills & Resume */}
+                    {/* === Right Column: Skills & Resume === */}
                     <div
                         className={`
                             bg-white/5 backdrop-blur-sm
@@ -82,7 +87,7 @@ const About: React.FC<AboutProps> = ({ theme, lang }) => {
                             </h3>
                         </div>
 
-                        {/* List of skills with bullet points */}
+                        {/* Skills / Services List */}
                         <div className="space-y-4">
                             {translations[lang].about.iDo.map((item, index) => (
                                 <div className="flex items-center" key={index}>
@@ -96,7 +101,7 @@ const About: React.FC<AboutProps> = ({ theme, lang }) => {
                             ))}
                         </div>
 
-                        {/* Resume Download Link */}
+                        {/* Resume Download Button */}
                         <div className="mt-4">
                             <a
                                 href="/folium/resume.pdf"
@@ -106,12 +111,12 @@ const About: React.FC<AboutProps> = ({ theme, lang }) => {
                             >
                                 <div
                                     className={`
-                                    inline-flex items-center
-                                    text-${theme}-600 hover:text-${theme}-400
-                                    dark:text-${theme}-300 dark:hover:text-${theme}-400
-                                    transition-colors duration-300
-                                    group
-                                `}
+                                        inline-flex items-center
+                                        text-${theme}-600 hover:text-${theme}-400
+                                        dark:text-${theme}-300 dark:hover:text-${theme}-400
+                                        transition-colors duration-300
+                                        group
+                                    `}
                                 >
                                     <Download className="h-4 w-4 mr-3" />
                                     {translations[lang].about.download}

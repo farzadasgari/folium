@@ -6,6 +6,7 @@ import { translations, type Language } from '../lib/translate';
  * Interface: Project
  *
  * Defines the structure of a project object displayed in the card.
+ * Note: All string fields are expected to be pre-translated based on the current language.
  */
 interface Project {
     imageURL: string; // URL of the project preview image
@@ -20,10 +21,14 @@ interface Project {
  * Interface: ProjectCardProps
  *
  * Props passed to the ProjectCard component.
+ * - project: The project data to render
+ * - index: Index for potential animation or key usage (currently unused but included for future flexibility)
+ * - theme: Current color theme for styling consistency
+ * - lang: Current language for translation key lookup
  */
 interface ProjectCardProps {
-    project: Project; // The project data to render
-    index: number; // Index for potential animation or key usage (currently unused but included)
+    project: Project;
+    index: number;
     theme: string;
     lang: Language;
 }
@@ -42,6 +47,15 @@ interface ProjectCardProps {
  * - Responsive layout using flexbox
  * - Accessible links with proper `target="_blank"` and `rel` safety
  * - Gradient-styled buttons and subtle border transitions
+ *
+ * Accessibility:
+ * - GitHub link includes descriptive aria-label
+ * - Image uses alt text for screen readers
+ * - Interactive elements are keyboard navigable
+ *
+ * Performance:
+ * - Images use `loading="lazy"` to defer offscreen image loading
+ * - CSS transitions are GPU-optimized where applicable
  */
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, theme, lang }) => {
     return (

@@ -14,6 +14,13 @@ import { translations, type Language } from './lib/translate';
  * - Reusable ProjectCard components
  * - Section-level gradient background (light/dark mode compatible)
  * - Semantic HTML with accessible structure
+ *
+ * Accessibility:
+ * - Section labeled by ID for screen readers
+ * - Project cards should include appropriate ARIA roles and labels via ProjectCard component
+ *
+ * Note: Project data is sourced from translation files, allowing multilingual support.
+ * The index is used as key; consider using a unique project ID if available in the future.
  */
 interface ProjectsProps {
     theme: string;

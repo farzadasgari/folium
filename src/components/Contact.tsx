@@ -15,6 +15,7 @@ import { translations, type Language } from './lib/translate';
  * - Responsive layout (stacked on mobile, side-by-side on desktop)
  *
  * Note: Form currently handles UI submission only (no backend integration).
+ * The success state is visual feedback only and does not send actual data.
  */
 
 interface ContactProps {
@@ -37,16 +38,16 @@ const Contact: React.FC<ContactProps> = ({ theme, lang }) => {
             displayURL: 'khufarzadasgari@gmail.com',
         },
         {
-            URL: 'https://github.com/farzadasgari  ',
+            URL: 'https://github.com/farzadasgari    ',
             icon: Github,
             title: 'GitHub',
-            displayURL: 'https://github.com/farzadasgari  ',
+            displayURL: 'https://github.com/farzadasgari    ',
         },
         {
-            URL: 'https://www.linkedin.com/in/farzad-asgari/  ',
+            URL: 'https://www.linkedin.com/in/farzad-asgari/    ',
             icon: Linkedin,
             title: 'LinkedIn',
-            displayURL: 'https://www.linkedin.com/in/farzad-asgari/  ',
+            displayURL: 'https://www.linkedin.com/in/farzad-asgari/    ',
         },
     ];
 
@@ -78,10 +79,13 @@ const Contact: React.FC<ContactProps> = ({ theme, lang }) => {
      * Handles form submission
      * Prevents default form reload, sets isSubmitted to true, and resets form
      * Note: This is a frontend-only submission indicator
+     * In a real implementation, this would include actual API submission
      */
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitted(true);
+        // Simulate form submission reset
+        // Note: No actual data is sent; integrate with backend or form service as needed
         setFormData({
             name: '',
             email: '',

@@ -14,6 +14,9 @@ import { translations, type Language } from './lib/translate';
  * - List of professional occupations
  * - Call-to-action buttons for navigation
  * - Animated downward arrow indicating scrollability
+ *
+ * Accessibility note: The scroll indicator is decorative and animated
+ * to naturally draw attention to scroll behavior.
  */
 
 interface HeroProps {
@@ -26,6 +29,7 @@ const Hero: React.FC<HeroProps> = ({ theme, lang }) => {
      * Scrolls to a specific section by ID
      *
      * @param sectionID - The ID of the target section (e.g., 'projects', 'contact')
+     * Uses smooth scrolling behavior for a polished user experience
      */
     const scrollToSection = (sectionID: string) => {
         const element = document.getElementById(sectionID);

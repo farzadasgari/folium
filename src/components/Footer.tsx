@@ -12,6 +12,9 @@ import { translations, type Language } from './lib/translate';
  *
  * Styled with glassmorphism, subtle borders, and hover effects.
  * Adapts layout for mobile and desktop.
+ *
+ * Note: All social links open in a new tab with proper security attributes.
+ * The developer attribution is both a credit and a clickable portfolio link.
  */
 
 interface FooterProps {
@@ -36,17 +39,17 @@ const Footer: React.FC<FooterProps> = ({ theme, lang }) => {
         },
         {
             name: 'GitHub',
-            href: 'https://github.com/farzadasgari/  ',
+            href: 'https://github.com/farzadasgari/    ',
             icon: Github,
         },
         {
             name: 'LinkedIn',
-            href: 'https://www.linkedin.com/in/farzad-asgari/  ',
+            href: 'https://www.linkedin.com/in/farzad-asgari/    ',
             icon: Linkedin,
         },
         {
             name: 'Twitter',
-            href: 'https://x.com/farzad_asg/  ',
+            href: 'https://x.com/farzad_asg/    ',
             icon: Twitter,
         },
     ];
@@ -100,7 +103,7 @@ const Footer: React.FC<FooterProps> = ({ theme, lang }) => {
                         Made with ❤️ by
                         <a
                             className={`ml-1 text-${theme}-400 hover:text-${theme}-600 dark:text-${theme}-200 dark:hover:text-${theme}-400 hover:underline transition-all duration-300`}
-                            href="https://github.com/farzadasgari  "
+                            href="https://github.com/farzadasgari    "
                         >
                             FarZad
                         </a>

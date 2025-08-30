@@ -4,6 +4,7 @@ import React from 'react';
  * Interface for SectionTitle Component Props
  *
  * @property {string} text - The title text to display (e.g., "About", "Projects")
+ * @property {string} theme - The current color theme to apply gradient styles (e.g., "purple", "blue")
  */
 interface SectionTitleProps {
     text: string;
@@ -20,6 +21,11 @@ interface SectionTitleProps {
  * - Consistent margin spacing for visual rhythm
  *
  * Used to introduce major sections of the page with visual emphasis.
+ * The gradient colors are dynamically generated based on the provided theme.
+ *
+ * Accessibility:
+ * - Text is readable with sufficient contrast in both light and dark modes
+ * - Visual elements are non-essential decoration and do not require ARIA labels
  */
 const SectionTitle: React.FC<SectionTitleProps> = ({ text, theme }) => {
     return (

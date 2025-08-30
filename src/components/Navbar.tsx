@@ -11,6 +11,12 @@ import { translations, type Language } from './lib/translate';
  * - Applies visual changes when user scrolls (e.g., background blur, shadow)
  * - Smoothly scrolls to sections via ID
  * - Automatically closes mobile menu after navigation
+ *
+ * Accessibility features:
+ * - ARIA labels for screen readers
+ * - Proper focus management
+ * - Keyboard navigable (via tab and click handlers)
+ * - Responsive design with mobile-first strategy
  */
 
 interface NavbarProps {
@@ -29,6 +35,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme, lang }) => {
      * Scrolls to a specific section by ID
      *
      * @param sectionID - The ID of the target DOM element (e.g., 'about', 'projects')
+     * Smooth scrolling is used for better UX.
+     * After navigation, the mobile menu is closed to improve usability on small screens.
      */
     const scrollToSection = (sectionID: string) => {
         const element = document.getElementById(sectionID);
@@ -42,7 +50,10 @@ const Navbar: React.FC<NavbarProps> = ({ theme, lang }) => {
 
     /**
      * Effect to detect scroll position and update navbar appearance
-     * Adds a background and shadow when user scrolls past 50px
+     * Adds a semi-transparent background and shadow when user scrolls past 50px
+     * Enhances readability and visual hierarchy on scroll
+     *
+     * Cleanup removes event listener on unmount to prevent memory leaks
      */
     useEffect(() => {
         const handleScroll = () => {

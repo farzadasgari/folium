@@ -25,8 +25,15 @@ import { translations, type Language } from '../lib/translate';
  * - Responsive design with smooth animations
  * - Backdrop overlay when open for better UX
  * - Accessible icons and labels
+ *
+ * Accessibility:
+ * - Uses ARIA labels where appropriate
+ * - Keyboard navigable (buttons are focusable)
+ * - Visual indicators for selected state (theme, language, dark mode)
+ *
+ * Note: Language switching and theme selection update parent state via callbacks.
+ * The color themes are currently for UI demonstration; actual styling relies on the parent theme context.
  */
-
 interface ThemeSidebarProps {
     lang: Language;
     setLang: (lang: Language) => void;
@@ -48,6 +55,7 @@ const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
     const [isOpen, setIsOpen] = useState(false);
 
     // List of available color themes (currently UI-only, not functional)
+    // These are visual representations; actual theme is controlled by parent component
     const themes = [
         { id: 'purple', name: 'Purple', color: 'bg-purple-500' },
         { id: 'red', name: 'Red', color: 'bg-red-500' },
@@ -60,6 +68,7 @@ const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
     ];
 
     // Supported languages (UI placeholder – no actual i18n logic implemented)
+    // Clicking a language calls setLang; actual translation is handled by the translations object
     const languages = [
         { id: 'en', name: 'English' },
         { id: 'ja', name: '日本語' },
