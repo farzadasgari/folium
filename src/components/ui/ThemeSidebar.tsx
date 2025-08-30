@@ -57,14 +57,46 @@ const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
     // List of available color themes (currently UI-only, not functional)
     // These are visual representations; actual theme is controlled by parent component
     const themes = [
-        { id: 'purple', name: 'Purple', color: 'bg-purple-500' },
-        { id: 'red', name: 'Red', color: 'bg-red-500' },
-        { id: 'emerald', name: 'Green', color: 'bg-emerald-500' },
-        { id: 'blue', name: 'Blue', color: 'bg-blue-500' },
-        { id: 'pink', name: 'Pink', color: 'bg-pink-500' },
-        { id: 'cyan', name: 'Cyan', color: 'bg-cyan-500' },
-        { id: 'yellow', name: 'Yellow', color: 'bg-yellow-500' },
-        { id: 'rose', name: 'Rose', color: 'bg-rose-500' },
+        {
+            id: 'purple',
+            name: translations[lang].sidebar.colors.purple,
+            color: 'bg-purple-500',
+        },
+        {
+            id: 'red',
+            name: translations[lang].sidebar.colors.red,
+            color: 'bg-red-500',
+        },
+        {
+            id: 'emerald',
+            name: translations[lang].sidebar.colors.emerald,
+            color: 'bg-emerald-500',
+        },
+        {
+            id: 'blue',
+            name: translations[lang].sidebar.colors.blue,
+            color: 'bg-blue-500',
+        },
+        {
+            id: 'pink',
+            name: translations[lang].sidebar.colors.pink,
+            color: 'bg-pink-500',
+        },
+        {
+            id: 'cyan',
+            name: translations[lang].sidebar.colors.cyan,
+            color: 'bg-cyan-500',
+        },
+        {
+            id: 'yellow',
+            name: translations[lang].sidebar.colors.yellow,
+            color: 'bg-yellow-500',
+        },
+        {
+            id: 'rose',
+            name: translations[lang].sidebar.colors.rose,
+            color: 'bg-rose-500',
+        },
     ];
 
     // Supported languages (UI placeholder – no actual i18n logic implemented)
