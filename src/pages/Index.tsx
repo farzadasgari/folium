@@ -8,6 +8,7 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ThemeSidebar from '../components/ui/ThemeSidebar';
 import { type Language } from '../components/lib/translate';
+import { tailwindSafelist } from '../components/ui/tailwindSafelist';
 
 const Index = () => {
     // State for enabling/disabling dark mode (light by default)
@@ -59,6 +60,9 @@ const Index = () => {
 
             {/* Footer (bottom section) */}
             <Footer theme={theme} lang={lang} />
+
+            {/* Tailwind styles SafeList */}
+            <>{tailwindSafelist()}</>
         </div>
     );
 };
