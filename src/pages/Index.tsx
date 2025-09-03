@@ -62,7 +62,7 @@ const Index = () => {
             <Footer theme={theme} lang={lang} />
 
             {/* Tailwind styles SafeList */}
-            <>{tailwindSafelist()}</>
+            <div className='hidden'>{tailwindSafelist()}</div>
         </div>
     );
 };
